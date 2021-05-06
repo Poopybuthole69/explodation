@@ -1,9 +1,21 @@
 {
-  "block.explodation.grape_plant_empty": "Grape Plant Empty",
-  "item.explodation.backpack": "Blue Backpack",
-  "block.explodation.grape_plant_full": "Grape Plant Full",
+  "item.explodation.saphire_sword": "Saphire Sword",
+  "item.explodation.saphire_armor_leggings": "Saphire Leggings",
   "block.explodation.rotten_wood_planks": "Rotten Wood Planks",
   "key.explodation.backpack_keybind": "Backpack Keybind",
   "item.explodation.grapes": "Grapes",
-  "block.explodation.rotten_log": "Rotten Log"
+  "block.explodation.rotten_log": "Rotten Log",
+  "item.explodation.saphire_armor_boots": "Saphire Boots",
+  "item.explodation.saphire_axe": "Saphire Axe",
+  "block.explodation.saphire_block": "Block of Saphire",
+  "block.explodation.grape_plant_empty": "Grape Plant Empty",
+  "item.explodation.backpack": "Blue Backpack",
+  "item.explodation.saphire_shovel": "Saphire Shovel",
+  "item.explodation.saphire_armor_helmet": "Saphire Helmet",
+  "block.explodation.grape_plant_full": "Grape Plant Full",
+  "item.explodation.saphire_armor_chestplate": "Saphire Chestplate",
+  "block.explodation.saphire_ore": "Saphire Ore",
+  "item.explodation.saphire": "Saphire",
+  "item.explodation.saphire_pickaxe": "Saphire Pickaxe",
+  "item.explodation.saphire_hoe": "Saphire Hoe"
 }

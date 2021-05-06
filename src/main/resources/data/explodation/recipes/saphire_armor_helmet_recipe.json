@@ -7,23 +7,23 @@
   ],
   "key": {
     "0": {
-      "item": "explodation:deleted_mod_element"
+      "item": "explodation:saphire"
     },
     "1": {
-      "item": "explodation:deleted_mod_element"
+      "item": "explodation:saphire"
     },
     "2": {
-      "item": "explodation:deleted_mod_element"
+      "item": "explodation:saphire"
     },
     "3": {
-      "item": "explodation:deleted_mod_element"
+      "item": "explodation:saphire"
     },
     "5": {
-      "item": "explodation:deleted_mod_element"
+      "item": "explodation:saphire"
     }
   },
   "result": {
-    "item": "explodation:deleted_mod_element_helmet",
+    "item": "explodation:saphire_armor_helmet",
     "count": 1
   }
 }
