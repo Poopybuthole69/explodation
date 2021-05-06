@@ -148,8 +148,7 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "backpack",
-      "path": "~/Backpack"
+      "registry_name": "backpack"
     },
     {
       "name": "Backback",
@@ -158,8 +157,7 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "backback",
-      "path": "~/Backpack"
+      "registry_name": "backback"
     }
   ],
   "variable_elements": [],
@@ -167,9 +165,11 @@
   "language_map": {
     "en_us": {
       "block.explodation.grape_plant_empty": "Grape Plant Empty",
+      "item.explodation.backpack": "Blue Backpack",
       "block.explodation.grape_plant_full": "Grape Plant Full",
       "block.explodation.rotten_wood_planks": "Rotten Wood Planks",
-      "item.explodation.grapes": "Grapes"
+      "item.explodation.grapes": "Grapes",
+      "block.explodation.rotten_log": "Rotten Log"
     }
   },
   "foldersRoot": {
