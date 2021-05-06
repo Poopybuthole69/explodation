@@ -149,7 +149,7 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "backpack",
-      "path": "~/Backpack"
+      "path": "~/Armor/Backpack"
     },
     {
       "name": "Backback",
@@ -159,7 +159,7 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "backback",
-      "path": "~/Backpack"
+      "path": "~/Armor/Backpack"
     }
   ],
   "variable_elements": [],
