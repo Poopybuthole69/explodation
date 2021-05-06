@@ -12,7 +12,7 @@ public class custom_model extends EntityModel<Entity> {
 
 		bb_main = new ModelRenderer(this);
 		bb_main.setRotationPoint(0.0F, 24.0F, 0.0F);
-		bb_main.setTextureOffset(0, 0).addBox(-4.0F, -6.0F, 0.0F, 8.0F, 6.0F, 1.0F, 0.0F, false);
+		bb_main.setTextureOffset(0, 0).addBox(-4.0F, -6.0F, -8.0F, 8.0F, 6.0F, 1.0F, 0.0F, false);
 	}
 
 	@Override

@@ -441,9 +441,10 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "item.explodation.saphire_armor_leggings": "Saphire Leggings",
       "item.explodation.saphire_sword": "Saphire Sword",
-      "block.explodation.rotten_wood_planks": "Rotten Wood Planks",
+      "item.explodation.saphire_armor_leggings": "Saphire Leggings",
+      "item.explodation.back_pack_armor_leggings": "Back Pack Armor Leggings",
+      "block.explodation.rotten_wood_planks": "RottenWood Planks",
       "key.explodation.backpack_keybind": "Backpack Keybind",
       "item.explodation.grapes": "Grapes",
       "block.explodation.rotten_log": "Rotten Log",
@@ -459,6 +460,9 @@
       "block.explodation.saphire_ore": "Saphire Ore",
       "item.explodation.saphire": "Saphire",
       "item.explodation.saphire_pickaxe": "Saphire Pickaxe",
+      "item.explodation.back_pack_armor_helmet": "Back Pack Armor Helmet",
+      "item.explodation.back_pack_armor_boots": "Back Pack Armor Boots",
+      "item.explodation.back_pack_armor_chestplate": "Back Pack Armor Body",
       "item.explodation.saphire_hoe": "Saphire Hoe"
     }
   },
