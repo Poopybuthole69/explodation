@@ -4,9 +4,6 @@ package net.mcreator.explodation.block;
 import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.common.ToolType;
 
-import net.minecraft.world.IBlockReader;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.Direction;
 import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
@@ -23,11 +20,11 @@ import java.util.List;
 import java.util.Collections;
 
 @ExplodationModElements.ModElement.Tag
-public class RottenWoodPlanksBlock extends ExplodationModElements.ModElement {
-	@ObjectHolder("explodation:rotten_wood_planks")
+public class SaphireBlockBlock extends ExplodationModElements.ModElement {
+	@ObjectHolder("explodation:saphire_block")
 	public static final Block block = null;
-	public RottenWoodPlanksBlock(ExplodationModElements instance) {
-		super(instance, 11);
+	public SaphireBlockBlock(ExplodationModElements instance) {
+		super(instance, 14);
 	}
 
 	@Override
@@ -38,14 +35,9 @@ public class RottenWoodPlanksBlock extends ExplodationModElements.ModElement {
 	}
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2f, 3f).setLightLevel(s -> 0).harvestLevel(0)
-					.harvestTool(ToolType.AXE).setRequiresTool());
-			setRegistryName("rotten_wood_planks");
-		}
-
-		@Override
-		public int getFlammability(BlockState state, IBlockReader world, BlockPos pos, Direction face) {
-			return 5;
+			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(5f, 10f).setLightLevel(s -> 0).harvestLevel(2)
+					.harvestTool(ToolType.PICKAXE).setRequiresTool());
+			setRegistryName("saphire_block");
 		}
 
 		@Override

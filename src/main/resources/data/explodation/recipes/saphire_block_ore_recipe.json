@@ -1,0 +1,13 @@
+{
+  "group": "explodation",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "explodation:saphire_block"
+    }
+  ],
+  "result": {
+    "item": "explodation:saphire",
+    "count": 9
+  }
+}

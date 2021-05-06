@@ -1,0 +1,30 @@
+{
+  "group": "explodation",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    " 4 ",
+    " 7 "
+  ],
+  "key": {
+    "0": {
+      "item": "explodation:saphire"
+    },
+    "1": {
+      "item": "explodation:saphire"
+    },
+    "2": {
+      "item": "explodation:saphire"
+    },
+    "4": {
+      "item": "minecraft:stick"
+    },
+    "7": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "explodation:saphire_pickaxe",
+    "count": 1
+  }
+}
