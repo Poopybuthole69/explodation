@@ -1,0 +1,11 @@
+{
+  "parent": "explodation:custom/blue_backpack",
+  "textures": {
+    "0": "explodation:blocks/backpack_front",
+    "1": "explodation:blocks/backpack_outline",
+    "2": "explodation:blocks/backpack_front_sides",
+    "3": "explodation:blocks/backpack_lines",
+    "missing": "explodation:blocks/backpack_front",
+    "particle": "explodation:items/blue_backpack"
+  }
+}

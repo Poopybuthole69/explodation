@@ -90,6 +90,26 @@
         ]
       },
       "path": "~/food"
+    },
+    {
+      "name": "Backpack",
+      "type": "item",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "backpack",
+      "path": "~/Backpack"
+    },
+    {
+      "name": "Backback",
+      "type": "gui",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "backback",
+      "path": "~/Backpack"
     }
   ],
   "variable_elements": [],
@@ -97,6 +117,7 @@
   "language_map": {
     "en_us": {
       "block.explodation.grape_plant_empty": "Grape Plant Empty",
+      "item.explodation.backpack": "Blue Backpack",
       "block.explodation.grape_plant_full": "Grape Plant Full",
       "item.explodation.grapes": "Grapes"
     }
