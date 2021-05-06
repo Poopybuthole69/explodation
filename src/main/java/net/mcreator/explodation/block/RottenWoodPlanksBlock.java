@@ -2,9 +2,8 @@
 package net.mcreator.explodation.block;
 
 import net.minecraftforge.registries.ObjectHolder;
-import net.minecraftforge.common.IPlantable;
+import net.minecraftforge.common.ToolType;
 
-import net.minecraft.world.World;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
@@ -13,19 +12,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
-import net.minecraft.entity.Entity;
-import net.minecraft.block.material.PushReaction;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
-import net.mcreator.explodation.procedures.RottenWoodPlanksEntityWalksOnTheBlockProcedure;
 import net.mcreator.explodation.ExplodationModElements;
 
-import java.util.Map;
 import java.util.List;
-import java.util.HashMap;
 import java.util.Collections;
 
 @ExplodationModElements.ModElement.Tag
@@ -33,7 +27,7 @@ public class RottenWoodPlanksBlock extends ExplodationModElements.ModElement {
 	@ObjectHolder("explodation:rotten_wood_planks")
 	public static final Block block = null;
 	public RottenWoodPlanksBlock(ExplodationModElements instance) {
-		super(instance, 6);
+		super(instance, 11);
 	}
 
 	@Override
@@ -44,18 +38,14 @@ public class RottenWoodPlanksBlock extends ExplodationModElements.ModElement {
 	}
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.WOOD).sound(SoundType.WET_GRASS).hardnessAndResistance(0.8f, 7.5f).setLightLevel(s -> 0));
+			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2f, 3f).setLightLevel(s -> 0).harvestLevel(0)
+					.harvestTool(ToolType.AXE).setRequiresTool());
 			setRegistryName("rotten_wood_planks");
 		}
 
 		@Override
-		public boolean canSustainPlant(BlockState state, IBlockReader world, BlockPos pos, Direction direction, IPlantable plantable) {
-			return true;
-		}
-
-		@Override
-		public PushReaction getPushReaction(BlockState state) {
-			return PushReaction.DESTROY;
+		public int getFlammability(BlockState state, IBlockReader world, BlockPos pos, Direction face) {
+			return 5;
 		}
 
 		@Override
@@ -64,22 +54,6 @@ public class RottenWoodPlanksBlock extends ExplodationModElements.ModElement {
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
 			return Collections.singletonList(new ItemStack(this, 1));
-		}
-
-		@Override
-		public void onEntityWalk(World world, BlockPos pos, Entity entity) {
-			super.onEntityWalk(world, pos, entity);
-			int x = pos.getX();
-			int y = pos.getY();
-			int z = pos.getZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				RottenWoodPlanksEntityWalksOnTheBlockProcedure.executeProcedure($_dependencies);
-			}
 		}
 	}
 }

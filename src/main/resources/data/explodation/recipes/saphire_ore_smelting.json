@@ -1,0 +1,12 @@
+{
+  "group": "explodation",
+  "type": "minecraft:smelting",
+  "experience": 0.7,
+  "cookingtime": 200,
+  "ingredient": {
+    "item": "explodation:saphire_ore"
+  },
+  "result": {
+    "item": "explodation:deleted_mod_element"
+  }
+}

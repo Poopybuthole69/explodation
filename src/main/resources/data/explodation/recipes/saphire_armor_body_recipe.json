@@ -1,0 +1,39 @@
+{
+  "group": "explodation",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "explodation:saphire"
+    },
+    "2": {
+      "item": "explodation:saphire"
+    },
+    "3": {
+      "item": "explodation:saphire"
+    },
+    "4": {
+      "item": "explodation:saphire"
+    },
+    "5": {
+      "item": "explodation:saphire"
+    },
+    "6": {
+      "item": "explodation:saphire"
+    },
+    "7": {
+      "item": "explodation:saphire"
+    },
+    "8": {
+      "item": "explodation:saphire"
+    }
+  },
+  "result": {
+    "item": "explodation:deleted_mod_element_chestplate",
+    "count": 1
+  }
+}
