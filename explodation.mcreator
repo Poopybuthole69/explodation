@@ -441,8 +441,8 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "item.explodation.saphire_sword": "Saphire Sword",
       "item.explodation.saphire_armor_leggings": "Saphire Leggings",
+      "item.explodation.saphire_sword": "Saphire Sword",
       "item.explodation.back_pack_armor_leggings": "Back Pack Armor Leggings",
       "block.explodation.rotten_wood_planks": "RottenWood Planks",
       "key.explodation.backpack_keybind": "Backpack Keybind",
