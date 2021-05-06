@@ -148,7 +148,8 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "backpack"
+      "registry_name": "backpack",
+      "path": "~/Armor/Backpack"
     },
     {
       "name": "Backback",
@@ -157,7 +158,8 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "backback"
+      "registry_name": "backback",
+      "path": "~/Armor/Backpack"
     }
   ],
   "variable_elements": [],
