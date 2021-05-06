@@ -160,6 +160,49 @@
       "ids": {},
       "registry_name": "backback",
       "path": "~/Armor/Backpack"
+    },
+    {
+      "name": "BackpackKeybindOnKeyPressed",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "backpack_keybind_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BackpackKeybind",
+      "type": "keybind",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "backpack_keybind",
+      "path": "~/Armor"
     }
   ],
   "variable_elements": [],
@@ -169,6 +212,7 @@
       "block.explodation.grape_plant_empty": "Grape Plant Empty",
       "block.explodation.grape_plant_full": "Grape Plant Full",
       "block.explodation.rotten_wood_planks": "Rotten Wood Planks",
+      "key.explodation.backpack_keybind": "Backpack Keybind",
       "item.explodation.grapes": "Grapes"
     }
   },

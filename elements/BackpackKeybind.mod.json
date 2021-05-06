@@ -1,0 +1,12 @@
+{
+  "_fv": 18,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "B",
+    "keyBindingName": "Backpack Keybind",
+    "keyBindingCategoryKey": "misc",
+    "onKeyPressed": {
+      "name": "BackpackKeybindOnKeyPressed"
+    }
+  }
+}
