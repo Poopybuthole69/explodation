@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "backpack_front",
+        "1": "backpack_outline",
+        "2": "backpack_front_sides",
+        "3": "backpack_lines",
+        "missing": "backpack_front"
+      },
+      "name": "default"
+    }
+  }
+}

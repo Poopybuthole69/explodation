@@ -1,18 +1,11 @@
 package net.mcreator.explodation.procedures;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.block.Blocks;
-
-import net.mcreator.explodation.ExplodationModElements;
-import net.mcreator.explodation.ExplodationMod;
-
-import java.util.Map;
-
 @ExplodationModElements.ModElement.Tag
 public class RottenWoodPlanksEntityWalksOnTheBlockProcedure extends ExplodationModElements.ModElement {
+
 	public RottenWoodPlanksEntityWalksOnTheBlockProcedure(ExplodationModElements instance) {
 		super(instance, 6);
+
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -36,10 +29,14 @@ public class RottenWoodPlanksEntityWalksOnTheBlockProcedure extends ExplodationM
 				ExplodationMod.LOGGER.warn("Failed to load dependency world for procedure RottenWoodPlanksEntityWalksOnTheBlock!");
 			return;
 		}
+
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
+
 		world.setBlockState(new BlockPos((int) (Math.floor(x)), (int) (Math.floor(y)), (int) (Math.floor(z))), Blocks.AIR.getDefaultState(), 3);
+
 	}
+
 }
