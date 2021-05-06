@@ -27,7 +27,7 @@ public class RottenWoodPlanksBlock extends ExplodationModElements.ModElement {
 	@ObjectHolder("explodation:rotten_wood_planks")
 	public static final Block block = null;
 	public RottenWoodPlanksBlock(ExplodationModElements instance) {
-		super(instance, 11);
+		super(instance, 6);
 	}
 
 	@Override

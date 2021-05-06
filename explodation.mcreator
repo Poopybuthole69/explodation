@@ -419,19 +419,51 @@
       "ids": {},
       "registry_name": "saphire_armor_boots_recipe",
       "path": "~/Armor/test"
+    },
+    {
+      "name": "BackPackArmor",
+      "type": "armor",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "back_pack_armor",
+      "metadata": {
+        "eh": false,
+        "el": false,
+        "eb": false,
+        "ec": true
+      },
+      "path": "~/Armor/Backpack"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "block.explodation.rotten_wood_planks": "Rotten Wood Planks",
+      "item.explodation.saphire_armor_leggings": "Saphire Leggings",
+      "item.explodation.saphire_sword": "Saphire Sword",
+      "item.explodation.back_pack_armor_leggings": "Back Pack Armor Leggings",
+      "block.explodation.rotten_wood_planks": "RottenWood Planks",
       "key.explodation.backpack_keybind": "Backpack Keybind",
       "item.explodation.grapes": "Grapes",
       "block.explodation.rotten_log": "Rotten Log",
+      "item.explodation.saphire_armor_boots": "Saphire Boots",
+      "item.explodation.saphire_axe": "Saphire Axe",
+      "block.explodation.saphire_block": "Block of Saphire",
       "block.explodation.grape_plant_empty": "Grape Plant Empty",
       "item.explodation.backpack": "Blue Backpack",
-      "block.explodation.grape_plant_full": "Grape Plant Full"
+      "item.explodation.saphire_shovel": "Saphire Shovel",
+      "item.explodation.saphire_armor_helmet": "Saphire Helmet",
+      "block.explodation.grape_plant_full": "Grape Plant Full",
+      "item.explodation.saphire_armor_chestplate": "Saphire Chestplate",
+      "block.explodation.saphire_ore": "Saphire Ore",
+      "item.explodation.saphire": "Saphire",
+      "item.explodation.saphire_pickaxe": "Saphire Pickaxe",
+      "item.explodation.back_pack_armor_helmet": "Back Pack Armor Helmet",
+      "item.explodation.back_pack_armor_boots": "Back Pack Armor Boots",
+      "item.explodation.back_pack_armor_chestplate": "Back Pack Armor Body",
+      "item.explodation.saphire_hoe": "Saphire Hoe"
     }
   },
   "foldersRoot": {
