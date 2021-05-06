@@ -1,8 +1,6 @@
 {
   "block.explodation.grape_plant_empty": "Grape Plant Empty",
-  "item.explodation.backpack": "Blue Backpack",
   "block.explodation.grape_plant_full": "Grape Plant Full",
   "block.explodation.rotten_wood_planks": "Rotten Wood Planks",
-  "item.explodation.grapes": "Grapes",
-  "block.explodation.rotten_log": "Rotten Log"
+  "item.explodation.grapes": "Grapes"
 }
