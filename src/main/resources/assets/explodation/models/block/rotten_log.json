@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "explodation:blocks/rotten_log_bottom",
+    "up": "explodation:blocks/rotten_log_top",
+    "north": "explodation:blocks/rotten_log_side1",
+    "east": "explodation:blocks/rotten_log_side2",
+    "south": "explodation:blocks/rotten_log_side2",
+    "west": "explodation:blocks/rotten_log_side2",
+    "particle": "explodation:blocks/rotten_log_bottom"
+  }
+}

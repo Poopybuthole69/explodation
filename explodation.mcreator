@@ -59,7 +59,7 @@
           }
         ]
       },
-      "path": "~/food"
+      "path": "~/food/grapes"
     },
     {
       "name": "GrapePlantEmptyUpdateTick",
@@ -89,7 +89,57 @@
           }
         ]
       },
-      "path": "~/food"
+      "path": "~/food/grapes"
+    },
+    {
+      "name": "RottenWoodPlanksEntityWalksOnTheBlock",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rotten_wood_planks_entity_walks_on_the_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Blocks/RottenWood"
+    },
+    {
+      "name": "RottenWoodPlanks",
+      "type": "block",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rotten_wood_planks",
+      "path": "~/Blocks/RottenWood"
+    },
+    {
+      "name": "RottenLog",
+      "type": "block",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rotten_log",
+      "path": "~/Blocks/RottenWood"
     }
   ],
   "variable_elements": [],
@@ -98,21 +148,37 @@
     "en_us": {
       "block.explodation.grape_plant_empty": "Grape Plant Empty",
       "block.explodation.grape_plant_full": "Grape Plant Full",
-      "item.explodation.grapes": "Grapes"
+      "block.explodation.rotten_wood_planks": "Rotten Wood Planks",
+      "item.explodation.grapes": "Grapes",
+      "block.explodation.rotten_log": "Rotten Log"
     }
   },
   "foldersRoot": {
     "name": "~",
     "children": [
       {
-        "name": "Backpack",
-        "children": []
-      },
-      {
         "name": "food",
         "children": [
           {
             "name": "grapes",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Armor",
+        "children": [
+          {
+            "name": "Backpack",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Blocks",
+        "children": [
+          {
+            "name": "RottenWood",
             "children": []
           }
         ]

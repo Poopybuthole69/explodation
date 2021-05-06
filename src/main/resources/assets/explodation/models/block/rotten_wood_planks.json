@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "explodation:blocks/rotten_wood_other",
+    "up": "explodation:blocks/rotten_wood_top",
+    "north": "explodation:blocks/rotten_wood_side",
+    "east": "explodation:blocks/rotten_wood_other",
+    "south": "explodation:blocks/rotten_wood_top",
+    "west": "explodation:blocks/rotten_wood_other",
+    "particle": "explodation:blocks/rotten_wood_other"
+  }
+}
