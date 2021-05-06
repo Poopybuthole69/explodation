@@ -1,1 +1,5 @@
-{}
+{
+  "block.explodation.grape_plant_empty": "Grape Plant Empty",
+  "block.explodation.grape_plant_full": "Grape Plant Full",
+  "item.explodation.grapes": "Grapes"
+}
