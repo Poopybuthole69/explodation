@@ -8,7 +8,12 @@
   },
   "foldersRoot": {
     "name": "~",
-    "children": []
+    "children": [
+      {
+        "name": "Backpack",
+        "children": []
+      }
+    ]
   },
   "workspaceSettings": {
     "modid": "explodation",
