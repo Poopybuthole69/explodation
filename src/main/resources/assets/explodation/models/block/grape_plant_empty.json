@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "explodation:blocks/grape_empty",
+    "particle": "explodation:blocks/grape_empty"
+  }
+}

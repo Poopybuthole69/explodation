@@ -1,10 +1,105 @@
 {
   "id_map": {},
-  "mod_elements": [],
+  "mod_elements": [
+    {
+      "name": "GrapePlantFull",
+      "type": "plant",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "grape_plant_full",
+      "path": "~/food/grapes"
+    },
+    {
+      "name": "GrapePlantEmpty",
+      "type": "plant",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "grape_plant_empty",
+      "path": "~/food/grapes"
+    },
+    {
+      "name": "Grapes",
+      "type": "food",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "grapes",
+      "path": "~/food/grapes"
+    },
+    {
+      "name": "GrapePlantFullPlantRightClicked",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "grape_plant_full_plant_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/food"
+    },
+    {
+      "name": "GrapePlantEmptyUpdateTick",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "grape_plant_empty_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/food"
+    }
+  ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "block.explodation.grape_plant_empty": "Grape Plant Empty",
+      "block.explodation.grape_plant_full": "Grape Plant Full",
+      "item.explodation.grapes": "Grapes"
+    }
   },
   "foldersRoot": {
     "name": "~",
@@ -12,6 +107,15 @@
       {
         "name": "Backpack",
         "children": []
+      },
+      {
+        "name": "food",
+        "children": [
+          {
+            "name": "grapes",
+            "children": []
+          }
+        ]
       }
     ]
   },
