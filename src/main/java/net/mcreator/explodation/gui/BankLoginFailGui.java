@@ -22,7 +22,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.gui.ScreenManager;
 
-import net.mcreator.explodation.procedures.GoToBankProcedure;
+import net.mcreator.explodation.procedures.CheckIfHasBankAccountProcedure;
 import net.mcreator.explodation.ExplodationModElements;
 
 import java.util.function.Supplier;
@@ -183,7 +183,7 @@ public class BankLoginFailGui extends ExplodationModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				GoToBankProcedure.executeProcedure($_dependencies);
+				CheckIfHasBankAccountProcedure.executeProcedure($_dependencies);
 			}
 		}
 		if (buttonID == 1) {
@@ -194,7 +194,7 @@ public class BankLoginFailGui extends ExplodationModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				GoToBankProcedure.executeProcedure($_dependencies);
+				CheckIfHasBankAccountProcedure.executeProcedure($_dependencies);
 			}
 		}
 	}

@@ -1,0 +1,66 @@
+{
+  "_fv": 18,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Bank - Change pincode",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Bank - Change pincode",
+          "x": 132,
+          "y": 44
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Commandpincode",
+          "width": 120,
+          "height": 20,
+          "name": "Pincode",
+          "x": 159,
+          "y": 98
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Type to change your pincode",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Type to change your pincode",
+          "x": 150,
+          "y": 80
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "change",
+          "onClick": {
+            "name": "ChangePincodeCommand"
+          },
+          "width": 55,
+          "height": 20,
+          "name": "change",
+          "x": 186,
+          "y": 125
+        }
+      }
+    ]
+  }
+}

@@ -22,7 +22,8 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.gui.ScreenManager;
 
-import net.mcreator.explodation.procedures.GoToBankProcedure;
+import net.mcreator.explodation.procedures.GoToTOSProcedure;
+import net.mcreator.explodation.procedures.CheckIfHasBankAccountProcedure;
 import net.mcreator.explodation.procedures.AttemptBankSignupProcedure;
 import net.mcreator.explodation.ExplodationModElements;
 
@@ -181,7 +182,22 @@ public class BankSignupGui extends ExplodationModElements.ModElement {
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
 				$_dependencies.put("guistate", guistate);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
 				AttemptBankSignupProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 1) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				GoToTOSProcedure.executeProcedure($_dependencies);
 			}
 		}
 		if (buttonID == 2) {
@@ -192,7 +208,7 @@ public class BankSignupGui extends ExplodationModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				GoToBankProcedure.executeProcedure($_dependencies);
+				CheckIfHasBankAccountProcedure.executeProcedure($_dependencies);
 			}
 		}
 	}

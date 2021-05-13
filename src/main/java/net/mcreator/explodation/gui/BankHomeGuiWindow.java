@@ -128,5 +128,11 @@ public class BankHomeGuiWindow extends ContainerScreen<BankHomeGui.GuiContainerM
 		BankHomeGui.guistate.put("text:Amount", Amount);
 		Amount.setMaxStringLength(32767);
 		this.children.add(this.Amount);
+		this.addButton(new Button(this.guiLeft + 123, this.guiTop + 7, 45, 20, new StringTextComponent("Back"), e -> {
+			if (true) {
+				ExplodationMod.PACKET_HANDLER.sendToServer(new BankHomeGui.ButtonPressedMessage(2, x, y, z));
+				BankHomeGui.handleButtonAction(entity, 2, x, y, z);
+			}
+		}));
 	}
 }

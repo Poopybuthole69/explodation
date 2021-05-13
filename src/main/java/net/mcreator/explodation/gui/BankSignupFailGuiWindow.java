@@ -21,12 +21,12 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
 @OnlyIn(Dist.CLIENT)
-public class BankLoginFailGuiWindow extends ContainerScreen<BankLoginFailGui.GuiContainerMod> {
+public class BankSignupFailGuiWindow extends ContainerScreen<BankSignupFailGui.GuiContainerMod> {
 	private World world;
 	private int x, y, z;
 	private PlayerEntity entity;
-	TextFieldWidget PincodeFail;
-	public BankLoginFailGuiWindow(BankLoginFailGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
+	TextFieldWidget SignupPincodeFail;
+	public BankSignupFailGuiWindow(BankSignupFailGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
 		this.x = container.x;
@@ -36,13 +36,13 @@ public class BankLoginFailGuiWindow extends ContainerScreen<BankLoginFailGui.Gui
 		this.xSize = 176;
 		this.ySize = 166;
 	}
-	private static final ResourceLocation texture = new ResourceLocation("explodation:textures/bank_login_fail.png");
+	private static final ResourceLocation texture = new ResourceLocation("explodation:textures/bank_signup_fail.png");
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);
 		super.render(ms, mouseX, mouseY, partialTicks);
 		this.renderHoveredTooltip(ms, mouseX, mouseY);
-		PincodeFail.render(ms, mouseX, mouseY, partialTicks);
+		SignupPincodeFail.render(ms, mouseX, mouseY, partialTicks);
 	}
 
 	@Override
@@ -63,27 +63,23 @@ public class BankLoginFailGuiWindow extends ContainerScreen<BankLoginFailGui.Gui
 			this.minecraft.player.closeScreen();
 			return true;
 		}
-		if (PincodeFail.isFocused())
-			return PincodeFail.keyPressed(key, b, c);
+		if (SignupPincodeFail.isFocused())
+			return SignupPincodeFail.keyPressed(key, b, c);
 		return super.keyPressed(key, b, c);
 	}
 
 	@Override
 	public void tick() {
 		super.tick();
-		PincodeFail.tick();
+		SignupPincodeFail.tick();
 	}
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
-		this.font.drawString(ms, "Bank - LOGIN ERROR", 6, 7, -12829636);
-		this.font.drawString(ms, "Sorry, you were unable to login", 6, 106, -12829636);
-		this.font.drawString(ms, "ERROR", 6, 88, -12829636);
-		this.font.drawString(ms, "Becasue of an login error", 6, 115, -12829636);
-		this.font.drawString(ms, "try checking your pincode", 6, 124, -12829636);
-		this.font.drawString(ms, "and make sure that you", 6, 133, -12829636);
-		this.font.drawString(ms, "use the right pincode", 6, 142, -12829636);
-		this.font.drawString(ms, "Go back and try again.", 60, 61, -12829636);
+		this.font.drawString(ms, "Bank - SIGNUP ERROR", 6, 7, -12829636);
+		this.font.drawString(ms, "Think AND ENTER a secure pincode", 6, 43, -12829636);
+		this.font.drawString(ms, "By signing up for our bank you", 6, 115, -12829636);
+		this.font.drawString(ms, "argree to the following T.O.S.", 6, 124, -12829636);
 	}
 
 	@Override
@@ -96,21 +92,16 @@ public class BankLoginFailGuiWindow extends ContainerScreen<BankLoginFailGui.Gui
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		this.addButton(new Button(this.guiLeft + 6, this.guiTop + 61, 50, 20, new StringTextComponent("Back"), e -> {
-			if (true) {
-				ExplodationMod.PACKET_HANDLER.sendToServer(new BankLoginFailGui.ButtonPressedMessage(0, x, y, z));
-				BankLoginFailGui.handleButtonAction(entity, 0, x, y, z);
-			}
-		}));
-		PincodeFail = new TextFieldWidget(this.font, this.guiLeft + 6, this.guiTop + 34, 120, 20, new StringTextComponent("pincode")) {
+		SignupPincodeFail = new TextFieldWidget(this.font, this.guiLeft + 6, this.guiTop + 61, 120, 20,
+				new StringTextComponent("Error - please enter a strong pincode")) {
 			{
-				setSuggestion("pincode");
+				setSuggestion("Error - please enter a strong pincode");
 			}
 			@Override
 			public void writeText(String text) {
 				super.writeText(text);
 				if (getText().isEmpty())
-					setSuggestion("pincode");
+					setSuggestion("Error - please enter a strong pincode");
 				else
 					setSuggestion(null);
 			}
@@ -119,18 +110,30 @@ public class BankLoginFailGuiWindow extends ContainerScreen<BankLoginFailGui.Gui
 			public void setCursorPosition(int pos) {
 				super.setCursorPosition(pos);
 				if (getText().isEmpty())
-					setSuggestion("pincode");
+					setSuggestion("Error - please enter a strong pincode");
 				else
 					setSuggestion(null);
 			}
 		};
-		BankLoginFailGui.guistate.put("text:PincodeFail", PincodeFail);
-		PincodeFail.setMaxStringLength(32767);
-		this.children.add(this.PincodeFail);
+		BankSignupFailGui.guistate.put("text:SignupPincodeFail", SignupPincodeFail);
+		SignupPincodeFail.setMaxStringLength(32767);
+		this.children.add(this.SignupPincodeFail);
+		this.addButton(new Button(this.guiLeft + 33, this.guiTop + 133, 105, 20, new StringTextComponent("Terms of service"), e -> {
+			if (true) {
+				ExplodationMod.PACKET_HANDLER.sendToServer(new BankSignupFailGui.ButtonPressedMessage(0, x, y, z));
+				BankSignupFailGui.handleButtonAction(entity, 0, x, y, z);
+			}
+		}));
 		this.addButton(new Button(this.guiLeft + 123, this.guiTop + 7, 45, 20, new StringTextComponent("Back"), e -> {
 			if (true) {
-				ExplodationMod.PACKET_HANDLER.sendToServer(new BankLoginFailGui.ButtonPressedMessage(1, x, y, z));
-				BankLoginFailGui.handleButtonAction(entity, 1, x, y, z);
+				ExplodationMod.PACKET_HANDLER.sendToServer(new BankSignupFailGui.ButtonPressedMessage(1, x, y, z));
+				BankSignupFailGui.handleButtonAction(entity, 1, x, y, z);
+			}
+		}));
+		this.addButton(new Button(this.guiLeft + 6, this.guiTop + 88, 45, 20, new StringTextComponent("Back"), e -> {
+			if (true) {
+				ExplodationMod.PACKET_HANDLER.sendToServer(new BankSignupFailGui.ButtonPressedMessage(2, x, y, z));
+				BankSignupFailGui.handleButtonAction(entity, 2, x, y, z);
 			}
 		}));
 	}

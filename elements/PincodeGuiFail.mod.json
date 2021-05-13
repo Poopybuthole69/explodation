@@ -13,39 +13,41 @@
       {
         "type": "label",
         "data": {
-          "text": "home",
+          "text": "Bank - Pincode error",
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "home",
+          "name": "Bank - Pincode error",
           "x": 132,
           "y": 44
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "text": "Bank",
-          "onClick": {
-            "name": "CheckIfHasBankAccount"
+          "text": "Your pincode has not been changed",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
           },
-          "width": 45,
-          "height": 20,
-          "name": "Bank",
-          "x": 150,
+          "name": "Your pincode has not been changed",
+          "x": 130,
           "y": 80
         }
       },
       {
         "type": "button",
         "data": {
-          "text": "Ebay",
+          "text": "Back",
+          "onClick": {
+            "name": "GoToBank"
+          },
           "width": 45,
           "height": 20,
-          "name": "Ebay",
-          "x": 222,
-          "y": 80
+          "name": "Back",
+          "x": 186,
+          "y": 134
         }
       }
     ]

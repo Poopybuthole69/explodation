@@ -13,12 +13,12 @@
       {
         "type": "label",
         "data": {
-          "text": "home",
+          "text": "Bank - Login",
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "home",
+          "name": "Bank - Login",
           "x": 132,
           "y": 44
         }
@@ -26,26 +26,40 @@
       {
         "type": "button",
         "data": {
-          "text": "Bank",
+          "text": "Login",
           "onClick": {
-            "name": "CheckIfHasBankAccount"
+            "name": "AttemptBankLoginNoSignup"
           },
-          "width": 45,
+          "width": 50,
           "height": 20,
-          "name": "Bank",
-          "x": 150,
-          "y": 80
+          "name": "Login",
+          "x": 132,
+          "y": 98
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "pincode",
+          "width": 120,
+          "height": 20,
+          "name": "Pincode2",
+          "x": 132,
+          "y": 71
         }
       },
       {
         "type": "button",
         "data": {
-          "text": "Ebay",
+          "text": "Back",
+          "onClick": {
+            "name": "OpenInternet"
+          },
           "width": 45,
           "height": 20,
-          "name": "Ebay",
-          "x": 222,
-          "y": 80
+          "name": "Back",
+          "x": 249,
+          "y": 44
         }
       }
     ]

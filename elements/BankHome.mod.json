@@ -84,6 +84,20 @@
           "x": 231,
           "y": 71
         }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Back",
+          "onClick": {
+            "name": "OpenInternet"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Back",
+          "x": 249,
+          "y": 44
+        }
       }
     ]
   }

@@ -15,8 +15,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 
-import net.mcreator.explodation.gui.BankSignupFailGui;
-import net.mcreator.explodation.gui.BankHomeGui;
+import net.mcreator.explodation.gui.PincodeGuiSuccessGui;
+import net.mcreator.explodation.gui.PincodeGuiFailGui;
 import net.mcreator.explodation.ExplodationModVariables;
 import net.mcreator.explodation.ExplodationModElements;
 import net.mcreator.explodation.ExplodationMod;
@@ -27,40 +27,40 @@ import java.util.HashMap;
 import io.netty.buffer.Unpooled;
 
 @ExplodationModElements.ModElement.Tag
-public class AttemptBankSignupProcedure extends ExplodationModElements.ModElement {
-	public AttemptBankSignupProcedure(ExplodationModElements instance) {
-		super(instance, 19);
+public class ChangePincodeCommandProcedure extends ExplodationModElements.ModElement {
+	public ChangePincodeCommandProcedure(ExplodationModElements instance) {
+		super(instance, 31);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				ExplodationMod.LOGGER.warn("Failed to load dependency entity for procedure AttemptBankSignup!");
+				ExplodationMod.LOGGER.warn("Failed to load dependency entity for procedure ChangePincodeCommand!");
 			return;
 		}
 		if (dependencies.get("guistate") == null) {
 			if (!dependencies.containsKey("guistate"))
-				ExplodationMod.LOGGER.warn("Failed to load dependency guistate for procedure AttemptBankSignup!");
+				ExplodationMod.LOGGER.warn("Failed to load dependency guistate for procedure ChangePincodeCommand!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				ExplodationMod.LOGGER.warn("Failed to load dependency x for procedure AttemptBankSignup!");
+				ExplodationMod.LOGGER.warn("Failed to load dependency x for procedure ChangePincodeCommand!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				ExplodationMod.LOGGER.warn("Failed to load dependency y for procedure AttemptBankSignup!");
+				ExplodationMod.LOGGER.warn("Failed to load dependency y for procedure ChangePincodeCommand!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				ExplodationMod.LOGGER.warn("Failed to load dependency z for procedure AttemptBankSignup!");
+				ExplodationMod.LOGGER.warn("Failed to load dependency z for procedure ChangePincodeCommand!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				ExplodationMod.LOGGER.warn("Failed to load dependency world for procedure AttemptBankSignup!");
+				ExplodationMod.LOGGER.warn("Failed to load dependency world for procedure ChangePincodeCommand!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -71,7 +71,7 @@ public class AttemptBankSignupProcedure extends ExplodationModElements.ModElemen
 		IWorld world = (IWorld) dependencies.get("world");
 		if ((((new Object() {
 			public String getText() {
-				TextFieldWidget textField = (TextFieldWidget) guistate.get("text:SignupPincode");
+				TextFieldWidget textField = (TextFieldWidget) guistate.get("text:Commandpincode");
 				if (textField != null) {
 					return textField.getText();
 				}
@@ -85,12 +85,12 @@ public class AttemptBankSignupProcedure extends ExplodationModElements.ModElemen
 					NetworkHooks.openGui((ServerPlayerEntity) _ent, new INamedContainerProvider() {
 						@Override
 						public ITextComponent getDisplayName() {
-							return new StringTextComponent("BankSignupFail");
+							return new StringTextComponent("PincodeGuiFail");
 						}
 
 						@Override
 						public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-							return new BankSignupFailGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(_bpos));
+							return new PincodeGuiFailGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(_bpos));
 						}
 					}, _bpos);
 				}
@@ -99,7 +99,7 @@ public class AttemptBankSignupProcedure extends ExplodationModElements.ModElemen
 			{
 				String _setval = (String) (new Object() {
 					public String getText() {
-						TextFieldWidget textField = (TextFieldWidget) guistate.get("text:SignupPincode");
+						TextFieldWidget textField = (TextFieldWidget) guistate.get("text:Commandpincode");
 						if (textField != null) {
 							return textField.getText();
 						}
@@ -118,12 +118,12 @@ public class AttemptBankSignupProcedure extends ExplodationModElements.ModElemen
 					NetworkHooks.openGui((ServerPlayerEntity) _ent, new INamedContainerProvider() {
 						@Override
 						public ITextComponent getDisplayName() {
-							return new StringTextComponent("BankHome");
+							return new StringTextComponent("PincodeGuiSuccess");
 						}
 
 						@Override
 						public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-							return new BankHomeGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(_bpos));
+							return new PincodeGuiSuccessGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(_bpos));
 						}
 					}, _bpos);
 				}

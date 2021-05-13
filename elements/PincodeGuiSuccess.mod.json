@@ -1,0 +1,82 @@
+{
+  "_fv": 18,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Bank - Pincode success",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Bank - Pincode success",
+          "x": 132,
+          "y": 44
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Your pincode has been",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Your pincode has been",
+          "x": 168,
+          "y": 98
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Go to Bank",
+          "onClick": {
+            "name": "GoToBank"
+          },
+          "width": 55,
+          "height": 20,
+          "name": "Go to Bank",
+          "x": 168,
+          "y": 134
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "successfully changed",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "successfully changed",
+          "x": 168,
+          "y": 116
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Back",
+          "onClick": {
+            "name": "GoToBank"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Back",
+          "x": 231,
+          "y": 134
+        }
+      }
+    ]
+  }
+}

@@ -23,7 +23,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.gui.ScreenManager;
 
 import net.mcreator.explodation.procedures.OpenInternetProcedure;
-import net.mcreator.explodation.procedures.GoToBankProcedure;
+import net.mcreator.explodation.procedures.AttemptBankLoginNoSignupProcedure;
 import net.mcreator.explodation.ExplodationModElements;
 
 import java.util.function.Supplier;
@@ -31,11 +31,11 @@ import java.util.Map;
 import java.util.HashMap;
 
 @ExplodationModElements.ModElement.Tag
-public class BankHomeGui extends ExplodationModElements.ModElement {
+public class BankLoginNoSignupGui extends ExplodationModElements.ModElement {
 	public static HashMap guistate = new HashMap();
 	private static ContainerType<GuiContainerMod> containerType = null;
-	public BankHomeGui(ExplodationModElements instance) {
-		super(instance, 20);
+	public BankLoginNoSignupGui(ExplodationModElements instance) {
+		super(instance, 23);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
 				ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,
@@ -46,12 +46,12 @@ public class BankHomeGui extends ExplodationModElements.ModElement {
 	private static class ContainerRegisterHandler {
 		@SubscribeEvent
 		public void registerContainer(RegistryEvent.Register<ContainerType<?>> event) {
-			event.getRegistry().register(containerType.setRegistryName("bank_home"));
+			event.getRegistry().register(containerType.setRegistryName("bank_login_no_signup"));
 		}
 	}
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
-		DeferredWorkQueue.runLater(() -> ScreenManager.registerFactory(containerType, BankHomeGuiWindow::new));
+		DeferredWorkQueue.runLater(() -> ScreenManager.registerFactory(containerType, BankLoginNoSignupGuiWindow::new));
 	}
 	public static class GuiContainerModFactory implements IContainerFactory {
 		public GuiContainerMod create(int id, PlayerInventory inv, PacketBuffer extraData) {
@@ -180,14 +180,15 @@ public class BankHomeGui extends ExplodationModElements.ModElement {
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
+				$_dependencies.put("guistate", guistate);
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				GoToBankProcedure.executeProcedure($_dependencies);
+				AttemptBankLoginNoSignupProcedure.executeProcedure($_dependencies);
 			}
 		}
-		if (buttonID == 2) {
+		if (buttonID == 1) {
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);

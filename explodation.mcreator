@@ -428,6 +428,22 @@
           {
             "name": "guistate",
             "type": "map"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -470,6 +486,254 @@
       "ids": {},
       "registry_name": "debit_card",
       "path": "~/Items/pincard"
+    },
+    {
+      "name": "BankSignupFail",
+      "type": "gui",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bank_signup_fail",
+      "path": "~/Internet/Bank"
+    },
+    {
+      "name": "BankLoginNoSignup",
+      "type": "gui",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bank_login_no_signup",
+      "path": "~/Internet/Bank"
+    },
+    {
+      "name": "AttemptBankLoginNoSignup",
+      "type": "procedure",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "attempt_bank_login_no_signup",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Internet/Bank/Procedures"
+    },
+    {
+      "name": "CheckIfHasBankAccount",
+      "type": "procedure",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "check_if_has_bank_account",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Internet/Bank/Procedures"
+    },
+    {
+      "name": "GoToTOS",
+      "type": "procedure",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "go_to_tos",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Internet/Bank/Procedures"
+    },
+    {
+      "name": "BankTOS",
+      "type": "gui",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bank_tos",
+      "path": "~/Internet/Bank"
+    },
+    {
+      "name": "ChangePincode",
+      "type": "command",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "change_pincode",
+      "path": "~/Internet/Bank/Procedures/command"
+    },
+    {
+      "name": "PincodeGui",
+      "type": "gui",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pincode_gui",
+      "path": "~/Internet/Bank/Procedures/command"
+    },
+    {
+      "name": "ChangePincodeCommandExecuted",
+      "type": "procedure",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "change_pincode_command_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Internet/Bank/Procedures/command"
+    },
+    {
+      "name": "ChangePincodeCommand",
+      "type": "procedure",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "change_pincode_command",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Internet/Bank/Procedures/command"
+    },
+    {
+      "name": "PincodeGuiSuccess",
+      "type": "gui",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pincode_gui_success",
+      "path": "~/Internet/Bank/Procedures/command"
+    },
+    {
+      "name": "PincodeGuiFail",
+      "type": "gui",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pincode_gui_fail",
+      "path": "~/Internet/Bank/Procedures/command"
     }
   ],
   "variable_elements": [
@@ -554,7 +818,12 @@
             "children": [
               {
                 "name": "Procedures",
-                "children": []
+                "children": [
+                  {
+                    "name": "command",
+                    "children": []
+                  }
+                ]
               }
             ]
           }
