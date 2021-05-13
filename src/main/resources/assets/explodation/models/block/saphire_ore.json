@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "explodation:blocks/saphire_ore",
-    "particle": "explodation:blocks/saphire_ore"
-  }
-}
