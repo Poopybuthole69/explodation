@@ -1,0 +1,100 @@
+{
+  "_fv": 18,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Bank - Signup",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Bank - Signup",
+          "x": 132,
+          "y": 44
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Think of a secure pincode",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Think of a secure pincode",
+          "x": 132,
+          "y": 80
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "pincode",
+          "width": 120,
+          "height": 20,
+          "name": "Pincode",
+          "x": 132,
+          "y": 98
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Signup!",
+          "width": 60,
+          "height": 20,
+          "name": "Signup!",
+          "x": 132,
+          "y": 125
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "By signing up for our bank you",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "By signing up for our bank you",
+          "x": 132,
+          "y": 152
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "argree to the following T.O.S.",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "argree to the following T.O.S.",
+          "x": 132,
+          "y": 161
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Terms of service",
+          "width": 105,
+          "height": 20,
+          "name": "Terms of service",
+          "x": 159,
+          "y": 170
+        }
+      }
+    ]
+  }
+}

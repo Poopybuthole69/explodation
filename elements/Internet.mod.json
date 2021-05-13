@@ -1,0 +1,53 @@
+{
+  "_fv": 18,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "home",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "home",
+          "x": 132,
+          "y": 44
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Bank",
+          "onClick": {
+            "name": "GoToBank"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Bank",
+          "x": 150,
+          "y": 80
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Ebay",
+          "width": 45,
+          "height": 20,
+          "name": "Ebay",
+          "x": 222,
+          "y": 80
+        }
+      }
+    ]
+  }
+}

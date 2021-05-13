@@ -1,0 +1,152 @@
+{
+  "_fv": 18,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Bank - ERROR",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Bank - ERROR",
+          "x": 132,
+          "y": 44
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "wrong",
+          "width": 50,
+          "height": 20,
+          "name": "wrong",
+          "x": 132,
+          "y": 98
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "pincode",
+          "width": 120,
+          "height": 20,
+          "name": "Pincode",
+          "x": 132,
+          "y": 71
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Back",
+          "width": 45,
+          "height": 20,
+          "name": "Back",
+          "x": 249,
+          "y": 44
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Sorry, you were unable to login",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Sorry, you were unable to login",
+          "x": 132,
+          "y": 143
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "ERROR",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "ERROR",
+          "x": 132,
+          "y": 125
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Becasue of an login error",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Becasue of an login error",
+          "x": 132,
+          "y": 152
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "try checking your pincode",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "try checking your pincode",
+          "x": 132,
+          "y": 161
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "and make sure that you",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "and make sure that you",
+          "x": 132,
+          "y": 170
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "use the right pincode",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "use the right pincode",
+          "x": 132,
+          "y": 179
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Go back and try again.",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Go back and try again.",
+          "x": 186,
+          "y": 98
+        }
+      }
+    ]
+  }
+}

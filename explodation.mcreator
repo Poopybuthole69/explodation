@@ -220,12 +220,210 @@
         "ec": true
       },
       "path": "~/Armor/Backpack"
+    },
+    {
+      "name": "Internet",
+      "type": "gui",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "internet",
+      "path": "~/Internet"
+    },
+    {
+      "name": "BankLogin",
+      "type": "gui",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bank_login",
+      "path": "~/Internet"
+    },
+    {
+      "name": "BankSignup",
+      "type": "gui",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bank_signup",
+      "path": "~/Internet"
+    },
+    {
+      "name": "GoToBank",
+      "type": "procedure",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "go_to_bank",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Internet"
+    },
+    {
+      "name": "Phone",
+      "type": "item",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "phone",
+      "path": "~/Items/mobile"
+    },
+    {
+      "name": "OpenInternet",
+      "type": "procedure",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "open_internet",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/mobile"
+    },
+    {
+      "name": "GoToBankSignup",
+      "type": "procedure",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "go_to_bank_signup",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Internet"
+    },
+    {
+      "name": "AttemptBankLogin",
+      "type": "procedure",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "attempt_bank_login",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Internet"
+    },
+    {
+      "name": "BankLoginFail",
+      "type": "gui",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bank_login_fail",
+      "path": "~/Internet"
     }
   ],
-  "variable_elements": [],
+  "variable_elements": [
+    {
+      "name": "Pincode",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    }
+  ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "item.explodation.phone": "Phone",
       "item.explodation.back_pack_armor_leggings": "Back Pack Armor Leggings",
       "block.explodation.rotten_wood_planks": "RottenWood Planks",
       "key.explodation.backpack_keybind": "Backpack Keybind",
@@ -286,6 +484,10 @@
             "children": []
           }
         ]
+      },
+      {
+        "name": "Internet",
+        "children": []
       }
     ]
   },
