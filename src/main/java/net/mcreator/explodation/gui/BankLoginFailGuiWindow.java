@@ -25,7 +25,7 @@ public class BankLoginFailGuiWindow extends ContainerScreen<BankLoginFailGui.Gui
 	private World world;
 	private int x, y, z;
 	private PlayerEntity entity;
-	TextFieldWidget Pincode;
+	TextFieldWidget PincodeFail;
 	public BankLoginFailGuiWindow(BankLoginFailGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
@@ -42,7 +42,7 @@ public class BankLoginFailGuiWindow extends ContainerScreen<BankLoginFailGui.Gui
 		this.renderBackground(ms);
 		super.render(ms, mouseX, mouseY, partialTicks);
 		this.renderHoveredTooltip(ms, mouseX, mouseY);
-		Pincode.render(ms, mouseX, mouseY, partialTicks);
+		PincodeFail.render(ms, mouseX, mouseY, partialTicks);
 	}
 
 	@Override
@@ -63,15 +63,15 @@ public class BankLoginFailGuiWindow extends ContainerScreen<BankLoginFailGui.Gui
 			this.minecraft.player.closeScreen();
 			return true;
 		}
-		if (Pincode.isFocused())
-			return Pincode.keyPressed(key, b, c);
+		if (PincodeFail.isFocused())
+			return PincodeFail.keyPressed(key, b, c);
 		return super.keyPressed(key, b, c);
 	}
 
 	@Override
 	public void tick() {
 		super.tick();
-		Pincode.tick();
+		PincodeFail.tick();
 	}
 
 	@Override
@@ -96,13 +96,13 @@ public class BankLoginFailGuiWindow extends ContainerScreen<BankLoginFailGui.Gui
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		this.addButton(new Button(this.guiLeft + 6, this.guiTop + 61, 50, 20, new StringTextComponent("wrong"), e -> {
+		this.addButton(new Button(this.guiLeft + 6, this.guiTop + 61, 50, 20, new StringTextComponent("Back"), e -> {
 			if (true) {
 				ExplodationMod.PACKET_HANDLER.sendToServer(new BankLoginFailGui.ButtonPressedMessage(0, x, y, z));
 				BankLoginFailGui.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
-		Pincode = new TextFieldWidget(this.font, this.guiLeft + 6, this.guiTop + 34, 120, 20, new StringTextComponent("pincode")) {
+		PincodeFail = new TextFieldWidget(this.font, this.guiLeft + 6, this.guiTop + 34, 120, 20, new StringTextComponent("pincode")) {
 			{
 				setSuggestion("pincode");
 			}
@@ -124,9 +124,9 @@ public class BankLoginFailGuiWindow extends ContainerScreen<BankLoginFailGui.Gui
 					setSuggestion(null);
 			}
 		};
-		BankLoginFailGui.guistate.put("text:Pincode", Pincode);
-		Pincode.setMaxStringLength(32767);
-		this.children.add(this.Pincode);
+		BankLoginFailGui.guistate.put("text:PincodeFail", PincodeFail);
+		PincodeFail.setMaxStringLength(32767);
+		this.children.add(this.PincodeFail);
 		this.addButton(new Button(this.guiLeft + 123, this.guiTop + 7, 45, 20, new StringTextComponent("Back"), e -> {
 			if (true) {
 				ExplodationMod.PACKET_HANDLER.sendToServer(new BankLoginFailGui.ButtonPressedMessage(1, x, y, z));

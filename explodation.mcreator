@@ -239,7 +239,7 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "bank_login",
-      "path": "~/Internet"
+      "path": "~/Internet/Bank"
     },
     {
       "name": "BankSignup",
@@ -249,7 +249,7 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "bank_signup",
-      "path": "~/Internet"
+      "path": "~/Internet/Bank"
     },
     {
       "name": "GoToBank",
@@ -283,7 +283,7 @@
           }
         ]
       },
-      "path": "~/Internet"
+      "path": "~/Internet/Bank/Procedures"
     },
     {
       "name": "Phone",
@@ -361,7 +361,7 @@
           }
         ]
       },
-      "path": "~/Internet"
+      "path": "~/Internet/Bank/Procedures"
     },
     {
       "name": "AttemptBankLogin",
@@ -399,7 +399,7 @@
           }
         ]
       },
-      "path": "~/Internet"
+      "path": "~/Internet/Bank/Procedures"
     },
     {
       "name": "BankLoginFail",
@@ -409,7 +409,67 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "bank_login_fail",
-      "path": "~/Internet"
+      "path": "~/Internet/Bank"
+    },
+    {
+      "name": "AttemptBankSignup",
+      "type": "procedure",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "attempt_bank_signup",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          }
+        ]
+      },
+      "path": "~/Internet/Bank/Procedures"
+    },
+    {
+      "name": "BankHome",
+      "type": "gui",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bank_home",
+      "path": "~/Internet/Bank"
+    },
+    {
+      "name": "DebitCardRightClickedInAir",
+      "type": "procedure",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "debit_card_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/pincard"
+    },
+    {
+      "name": "DebitCard",
+      "type": "item",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "debit_card",
+      "path": "~/Items/pincard"
     }
   ],
   "variable_elements": [
@@ -417,7 +477,7 @@
       "name": "Pincode",
       "type": "string",
       "scope": "player_persistent",
-      "value": ""
+      "value": "NoAccount"
     }
   ],
   "sound_elements": [],
@@ -431,6 +491,7 @@
       "block.explodation.rotten_log": "Rotten Log",
       "block.explodation.grape_plant_empty": "Grape Plant Empty",
       "item.explodation.backpack": "Blue Backpack",
+      "item.explodation.debit_card": "Debit Card",
       "block.explodation.grape_plant_full": "Grape Plant Full",
       "item.explodation.back_pack_armor_helmet": "Back Pack Armor Helmet",
       "item.explodation.back_pack_armor_boots": "Back Pack Armor Boots",
@@ -487,7 +548,17 @@
       },
       {
         "name": "Internet",
-        "children": []
+        "children": [
+          {
+            "name": "Bank",
+            "children": [
+              {
+                "name": "Procedures",
+                "children": []
+              }
+            ]
+          }
+        ]
       }
     ]
   },

@@ -16,7 +16,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 
 import net.mcreator.explodation.gui.BankLoginFailGui;
-import net.mcreator.explodation.gui.BackbackGui;
+import net.mcreator.explodation.gui.BankHomeGui;
 import net.mcreator.explodation.ExplodationModVariables;
 import net.mcreator.explodation.ExplodationModElements;
 import net.mcreator.explodation.ExplodationMod;
@@ -71,7 +71,7 @@ public class AttemptBankLoginProcedure extends ExplodationModElements.ModElement
 		IWorld world = (IWorld) dependencies.get("world");
 		if ((((new Object() {
 			public String getText() {
-				TextFieldWidget textField = (TextFieldWidget) guistate.get("text:textFieldName");
+				TextFieldWidget textField = (TextFieldWidget) guistate.get("text:Pincode");
 				if (textField != null) {
 					return textField.getText();
 				}
@@ -86,12 +86,12 @@ public class AttemptBankLoginProcedure extends ExplodationModElements.ModElement
 					NetworkHooks.openGui((ServerPlayerEntity) _ent, new INamedContainerProvider() {
 						@Override
 						public ITextComponent getDisplayName() {
-							return new StringTextComponent("Backback");
+							return new StringTextComponent("BankHome");
 						}
 
 						@Override
 						public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-							return new BackbackGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(_bpos));
+							return new BankHomeGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(_bpos));
 						}
 					}, _bpos);
 				}

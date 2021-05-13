@@ -79,7 +79,7 @@ public class ExplodationModVariables {
 	}
 
 	public static class PlayerVariables {
-		public String Pincode = "";
+		public String Pincode = "NoAccount";
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
 				ExplodationMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity),

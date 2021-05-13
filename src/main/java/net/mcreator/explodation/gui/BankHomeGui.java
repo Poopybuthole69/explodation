@@ -23,7 +23,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.gui.ScreenManager;
 
 import net.mcreator.explodation.procedures.GoToBankProcedure;
-import net.mcreator.explodation.procedures.AttemptBankSignupProcedure;
 import net.mcreator.explodation.ExplodationModElements;
 
 import java.util.function.Supplier;
@@ -31,11 +30,11 @@ import java.util.Map;
 import java.util.HashMap;
 
 @ExplodationModElements.ModElement.Tag
-public class BankSignupGui extends ExplodationModElements.ModElement {
+public class BankHomeGui extends ExplodationModElements.ModElement {
 	public static HashMap guistate = new HashMap();
 	private static ContainerType<GuiContainerMod> containerType = null;
-	public BankSignupGui(ExplodationModElements instance) {
-		super(instance, 12);
+	public BankHomeGui(ExplodationModElements instance) {
+		super(instance, 20);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
 				ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,
@@ -46,12 +45,12 @@ public class BankSignupGui extends ExplodationModElements.ModElement {
 	private static class ContainerRegisterHandler {
 		@SubscribeEvent
 		public void registerContainer(RegistryEvent.Register<ContainerType<?>> event) {
-			event.getRegistry().register(containerType.setRegistryName("bank_signup"));
+			event.getRegistry().register(containerType.setRegistryName("bank_home"));
 		}
 	}
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
-		DeferredWorkQueue.runLater(() -> ScreenManager.registerFactory(containerType, BankSignupGuiWindow::new));
+		DeferredWorkQueue.runLater(() -> ScreenManager.registerFactory(containerType, BankHomeGuiWindow::new));
 	}
 	public static class GuiContainerModFactory implements IContainerFactory {
 		public GuiContainerMod create(int id, PlayerInventory inv, PacketBuffer extraData) {
@@ -177,14 +176,6 @@ public class BankSignupGui extends ExplodationModElements.ModElement {
 		if (!world.isBlockLoaded(new BlockPos(x, y, z)))
 			return;
 		if (buttonID == 0) {
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("guistate", guistate);
-				AttemptBankSignupProcedure.executeProcedure($_dependencies);
-			}
-		}
-		if (buttonID == 2) {
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);

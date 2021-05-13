@@ -21,12 +21,12 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
 @OnlyIn(Dist.CLIENT)
-public class BankSignupGuiWindow extends ContainerScreen<BankSignupGui.GuiContainerMod> {
+public class BankHomeGuiWindow extends ContainerScreen<BankHomeGui.GuiContainerMod> {
 	private World world;
 	private int x, y, z;
 	private PlayerEntity entity;
-	TextFieldWidget SignupPincode;
-	public BankSignupGuiWindow(BankSignupGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
+	TextFieldWidget Amount;
+	public BankHomeGuiWindow(BankHomeGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
 		this.x = container.x;
@@ -36,13 +36,13 @@ public class BankSignupGuiWindow extends ContainerScreen<BankSignupGui.GuiContai
 		this.xSize = 176;
 		this.ySize = 166;
 	}
-	private static final ResourceLocation texture = new ResourceLocation("explodation:textures/bank_signup.png");
+	private static final ResourceLocation texture = new ResourceLocation("explodation:textures/bank_home.png");
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);
 		super.render(ms, mouseX, mouseY, partialTicks);
 		this.renderHoveredTooltip(ms, mouseX, mouseY);
-		SignupPincode.render(ms, mouseX, mouseY, partialTicks);
+		Amount.render(ms, mouseX, mouseY, partialTicks);
 	}
 
 	@Override
@@ -63,23 +63,22 @@ public class BankSignupGuiWindow extends ContainerScreen<BankSignupGui.GuiContai
 			this.minecraft.player.closeScreen();
 			return true;
 		}
-		if (SignupPincode.isFocused())
-			return SignupPincode.keyPressed(key, b, c);
+		if (Amount.isFocused())
+			return Amount.keyPressed(key, b, c);
 		return super.keyPressed(key, b, c);
 	}
 
 	@Override
 	public void tick() {
 		super.tick();
-		SignupPincode.tick();
+		Amount.tick();
 	}
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
-		this.font.drawString(ms, "Bank - Signup", 6, 7, -12829636);
-		this.font.drawString(ms, "Think of a secure pincode", 6, 43, -12829636);
-		this.font.drawString(ms, "By signing up for our bank you", 6, 115, -12829636);
-		this.font.drawString(ms, "argree to the following T.O.S.", 6, 124, -12829636);
+		this.font.drawString(ms, "Bank - Home", 6, 7, -12829636);
+		this.font.drawString(ms, "Current balance:", 24, 34, -12829636);
+		this.font.drawString(ms, "Balance", 105, 34, -12829636);
 	}
 
 	@Override
@@ -92,15 +91,27 @@ public class BankSignupGuiWindow extends ContainerScreen<BankSignupGui.GuiContai
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		SignupPincode = new TextFieldWidget(this.font, this.guiLeft + 6, this.guiTop + 61, 120, 20, new StringTextComponent("pincode")) {
+		this.addButton(new Button(this.guiLeft + 33, this.guiTop + 106, 45, 20, new StringTextComponent("Withdraw"), e -> {
+			if (true) {
+				ExplodationMod.PACKET_HANDLER.sendToServer(new BankHomeGui.ButtonPressedMessage(0, x, y, z));
+				BankHomeGui.handleButtonAction(entity, 0, x, y, z);
+			}
+		}));
+		this.addButton(new Button(this.guiLeft + 96, this.guiTop + 106, 45, 20, new StringTextComponent("Deposit"), e -> {
+			if (true) {
+				ExplodationMod.PACKET_HANDLER.sendToServer(new BankHomeGui.ButtonPressedMessage(1, x, y, z));
+				BankHomeGui.handleButtonAction(entity, 1, x, y, z);
+			}
+		}));
+		Amount = new TextFieldWidget(this.font, this.guiLeft + 24, this.guiTop + 70, 120, 20, new StringTextComponent("Amount")) {
 			{
-				setSuggestion("pincode");
+				setSuggestion("Amount");
 			}
 			@Override
 			public void writeText(String text) {
 				super.writeText(text);
 				if (getText().isEmpty())
-					setSuggestion("pincode");
+					setSuggestion("Amount");
 				else
 					setSuggestion(null);
 			}
@@ -109,31 +120,13 @@ public class BankSignupGuiWindow extends ContainerScreen<BankSignupGui.GuiContai
 			public void setCursorPosition(int pos) {
 				super.setCursorPosition(pos);
 				if (getText().isEmpty())
-					setSuggestion("pincode");
+					setSuggestion("Amount");
 				else
 					setSuggestion(null);
 			}
 		};
-		BankSignupGui.guistate.put("text:SignupPincode", SignupPincode);
-		SignupPincode.setMaxStringLength(32767);
-		this.children.add(this.SignupPincode);
-		this.addButton(new Button(this.guiLeft + 6, this.guiTop + 88, 60, 20, new StringTextComponent("Signup!"), e -> {
-			if (true) {
-				ExplodationMod.PACKET_HANDLER.sendToServer(new BankSignupGui.ButtonPressedMessage(0, x, y, z));
-				BankSignupGui.handleButtonAction(entity, 0, x, y, z);
-			}
-		}));
-		this.addButton(new Button(this.guiLeft + 33, this.guiTop + 133, 105, 20, new StringTextComponent("Terms of service"), e -> {
-			if (true) {
-				ExplodationMod.PACKET_HANDLER.sendToServer(new BankSignupGui.ButtonPressedMessage(1, x, y, z));
-				BankSignupGui.handleButtonAction(entity, 1, x, y, z);
-			}
-		}));
-		this.addButton(new Button(this.guiLeft + 123, this.guiTop + 7, 45, 20, new StringTextComponent("Back"), e -> {
-			if (true) {
-				ExplodationMod.PACKET_HANDLER.sendToServer(new BankSignupGui.ButtonPressedMessage(2, x, y, z));
-				BankSignupGui.handleButtonAction(entity, 2, x, y, z);
-			}
-		}));
+		BankHomeGui.guistate.put("text:Amount", Amount);
+		Amount.setMaxStringLength(32767);
+		this.children.add(this.Amount);
 	}
 }

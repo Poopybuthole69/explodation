@@ -26,10 +26,13 @@
       {
         "type": "button",
         "data": {
-          "text": "wrong",
+          "text": "Back",
+          "onClick": {
+            "name": "GoToBank"
+          },
           "width": 50,
           "height": 20,
-          "name": "wrong",
+          "name": "Back",
           "x": 132,
           "y": 98
         }
@@ -40,7 +43,7 @@
           "placeholder": "pincode",
           "width": 120,
           "height": 20,
-          "name": "Pincode",
+          "name": "PincodeFail",
           "x": 132,
           "y": 71
         }
@@ -49,6 +52,9 @@
         "type": "button",
         "data": {
           "text": "Back",
+          "onClick": {
+            "name": "GoToBank"
+          },
           "width": 45,
           "height": 20,
           "name": "Back",
