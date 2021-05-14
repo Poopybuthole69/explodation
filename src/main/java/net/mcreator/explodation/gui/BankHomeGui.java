@@ -23,7 +23,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.gui.ScreenManager;
 
 import net.mcreator.explodation.procedures.OpenInternetProcedure;
-import net.mcreator.explodation.procedures.GoToBankHomeProcedure;
+import net.mcreator.explodation.procedures.GivemoneyProcedure;
 import net.mcreator.explodation.procedures.ChangePincodeCommandExecutedProcedure;
 import net.mcreator.explodation.ExplodationModElements;
 
@@ -207,7 +207,7 @@ public class BankHomeGui extends ExplodationModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				GoToBankHomeProcedure.executeProcedure($_dependencies);
+				GivemoneyProcedure.executeProcedure($_dependencies);
 			}
 		}
 	}

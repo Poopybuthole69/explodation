@@ -69,11 +69,11 @@ public class BuyCookieProcedure extends ExplodationModElements.ModElement {
 		IWorld world = (IWorld) dependencies.get("world");
 		double Moneytest = 0;
 		double Price = 0;
-		Price = (double) 1;
+		Price = (double) 30;
 		Moneytest = (double) ((entity.getCapability(ExplodationModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new ExplodationModVariables.PlayerVariables())).BankMoney);
 		Moneytest = (double) ((Moneytest) - (Price));
-		if (((Moneytest) <= 0)) {
+		if (((Moneytest) > 0)) {
 			if (entity instanceof PlayerEntity) {
 				ItemStack _setstack = new ItemStack(Items.COOKIE, (int) (1));
 				_setstack.setCount((int) 1);

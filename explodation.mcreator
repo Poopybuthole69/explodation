@@ -1030,6 +1030,40 @@
         ]
       },
       "path": "~/Internet/Ebay/Procedures"
+    },
+    {
+      "name": "Givemoney",
+      "type": "procedure",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "givemoney",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Internet/Bank/Procedures"
     }
   ],
   "variable_elements": [

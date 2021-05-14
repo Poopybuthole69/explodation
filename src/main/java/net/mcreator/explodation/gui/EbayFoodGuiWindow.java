@@ -84,13 +84,13 @@ public class EbayFoodGuiWindow extends ContainerScreen<EbayFoodGui.GuiContainerM
 				.orElse(new ExplodationModVariables.PlayerVariables())).BankMoney) + "$", 70, 34, -12829636);
 		this.font.drawString(ms, "______________________________________", 7, 43, -12829636);
 		this.font.drawString(ms, "Carrot", 25, 54, -12829636);
-		this.font.drawString(ms, "-0,50$", 25, 97, -12829636);
+		this.font.drawString(ms, "-10$", 25, 97, -12829636);
 		this.font.drawString(ms, "God Apple", 179, 54, -12829636);
 		this.font.drawString(ms, "Gumballs", 128, 54, -12829636);
 		this.font.drawString(ms, "Cookie", 79, 54, -12829636);
-		this.font.drawString(ms, "-1$", 87, 97, -12829636);
-		this.font.drawString(ms, "-5,50$", 133, 98, -12829636);
-		this.font.drawString(ms, "-60$", 192, 97, -12829636);
+		this.font.drawString(ms, "-30$", 87, 97, -12829636);
+		this.font.drawString(ms, "-60$", 133, 98, -12829636);
+		this.font.drawString(ms, "-200$", 192, 97, -12829636);
 	}
 
 	@Override
