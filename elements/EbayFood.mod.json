@@ -3,7 +3,7 @@
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 176,
+    "width": 250,
     "height": 166,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
@@ -19,7 +19,7 @@
             "falpha": 0.0
           },
           "name": "Ebay - Food",
-          "x": 132,
+          "x": 96,
           "y": 44
         }
       },
@@ -32,21 +32,21 @@
             "falpha": 0.0
           },
           "name": "<VAR:integer:BankMoney>$",
-          "x": 258,
-          "y": 80
+          "x": 159,
+          "y": 71
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "_________________________",
+          "text": "______________________________________",
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "_________________________",
-          "x": 141,
-          "y": 62
+          "name": "______________________________________",
+          "x": 96,
+          "y": 80
         }
       },
       {
@@ -54,12 +54,12 @@
         "data": {
           "text": "Back",
           "onClick": {
-            "name": "OpenInternet"
+            "name": "GoToEbay"
           },
           "width": 45,
           "height": 20,
           "name": "Back",
-          "x": 249,
+          "x": 285,
           "y": 44
         }
       },
@@ -73,41 +73,208 @@
           "width": 45,
           "height": 20,
           "name": "Home",
-          "x": 132,
-          "y": 80
+          "x": 96,
+          "y": 62
         }
       },
       {
         "type": "button",
         "data": {
-          "text": "Clothes",
-          "width": 60,
+          "text": "Buy",
+          "onClick": {
+            "name": "BuyGodapple"
+          },
+          "width": 30,
           "height": 20,
-          "name": "Clothes",
-          "x": 132,
-          "y": 125
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Food",
-          "width": 45,
-          "height": 20,
-          "name": "Food",
-          "x": 240,
-          "y": 125
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Music",
-          "width": 50,
-          "height": 20,
-          "name": "Music",
-          "x": 132,
+          "name": "Buy",
+          "x": 276,
           "y": 152
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "buy",
+          "onClick": {
+            "name": "BuyGumballl"
+          },
+          "width": 30,
+          "height": 20,
+          "name": "buy",
+          "x": 222,
+          "y": 152
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Buy",
+          "onClick": {
+            "name": "BuyCarrot"
+          },
+          "width": 30,
+          "height": 20,
+          "name": "Buy",
+          "x": 114,
+          "y": 152
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Buy",
+          "onClick": {
+            "name": "BuyCookie"
+          },
+          "width": 30,
+          "height": 20,
+          "name": "Buy",
+          "x": 168,
+          "y": 152
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Carrot",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Carrot",
+          "x": 114,
+          "y": 91
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "-0,50$",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "-0,50$",
+          "x": 114,
+          "y": 134
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "workingcarrot.png",
+          "use1Xscale": false,
+          "name": "workingcarrot.png",
+          "x": 113,
+          "y": 101
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "God Apple",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "God Apple",
+          "x": 268,
+          "y": 91
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Gumballs",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Gumballs",
+          "x": 217,
+          "y": 91
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Cookie",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Cookie",
+          "x": 168,
+          "y": 91
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "godapple.png",
+          "use1Xscale": false,
+          "name": "godapple.png",
+          "x": 275,
+          "y": 103
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "gumballs.png",
+          "use1Xscale": false,
+          "name": "gumballs.png",
+          "x": 221,
+          "y": 104
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cookie.png",
+          "use1Xscale": false,
+          "name": "cookie.png",
+          "x": 168,
+          "y": 101
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "-1$",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "-1$",
+          "x": 176,
+          "y": 134
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "-5,50$",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "-5,50$",
+          "x": 222,
+          "y": 135
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "-60$",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "-60$",
+          "x": 281,
+          "y": 134
         }
       }
     ]

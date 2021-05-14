@@ -32,7 +32,7 @@ public class EbayFoodGuiWindow extends ContainerScreen<EbayFoodGui.GuiContainerM
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.xSize = 176;
+		this.xSize = 250;
 		this.ySize = 166;
 	}
 	private static final ResourceLocation texture = new ResourceLocation("explodation:textures/ebay_food.png");
@@ -52,6 +52,14 @@ public class EbayFoodGuiWindow extends ContainerScreen<EbayFoodGui.GuiContainerM
 		int k = (this.width - this.xSize) / 2;
 		int l = (this.height - this.ySize) / 2;
 		this.blit(ms, k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("explodation:textures/workingcarrot.png"));
+		this.blit(ms, this.guiLeft + 24, this.guiTop + 64, 0, 0, 32, 32, 32, 32);
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("explodation:textures/godapple.png"));
+		this.blit(ms, this.guiLeft + 186, this.guiTop + 66, 0, 0, 32, 32, 32, 32);
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("explodation:textures/gumballs.png"));
+		this.blit(ms, this.guiLeft + 132, this.guiTop + 67, 0, 0, 32, 32, 32, 32);
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("explodation:textures/cookie.png"));
+		this.blit(ms, this.guiLeft + 79, this.guiTop + 64, 0, 0, 32, 32, 32, 32);
 		RenderSystem.disableBlend();
 	}
 
@@ -71,10 +79,18 @@ public class EbayFoodGuiWindow extends ContainerScreen<EbayFoodGui.GuiContainerM
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
-		this.font.drawString(ms, "Ebay - Food", 6, 7, -12829636);
+		this.font.drawString(ms, "Ebay - Food", 7, 7, -12829636);
 		this.font.drawString(ms, "" + (int) ((entity.getCapability(ExplodationModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ExplodationModVariables.PlayerVariables())).BankMoney) + "$", 132, 43, -12829636);
-		this.font.drawString(ms, "_________________________", 15, 25, -12829636);
+				.orElse(new ExplodationModVariables.PlayerVariables())).BankMoney) + "$", 70, 34, -12829636);
+		this.font.drawString(ms, "______________________________________", 7, 43, -12829636);
+		this.font.drawString(ms, "Carrot", 25, 54, -12829636);
+		this.font.drawString(ms, "-0,50$", 25, 97, -12829636);
+		this.font.drawString(ms, "God Apple", 179, 54, -12829636);
+		this.font.drawString(ms, "Gumballs", 128, 54, -12829636);
+		this.font.drawString(ms, "Cookie", 79, 54, -12829636);
+		this.font.drawString(ms, "-1$", 87, 97, -12829636);
+		this.font.drawString(ms, "-5,50$", 133, 98, -12829636);
+		this.font.drawString(ms, "-60$", 192, 97, -12829636);
 	}
 
 	@Override
@@ -87,34 +103,40 @@ public class EbayFoodGuiWindow extends ContainerScreen<EbayFoodGui.GuiContainerM
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		this.addButton(new Button(this.guiLeft + 123, this.guiTop + 7, 45, 20, new StringTextComponent("Back"), e -> {
+		this.addButton(new Button(this.guiLeft + 196, this.guiTop + 7, 45, 20, new StringTextComponent("Back"), e -> {
 			if (true) {
 				ExplodationMod.PACKET_HANDLER.sendToServer(new EbayFoodGui.ButtonPressedMessage(0, x, y, z));
 				EbayFoodGui.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
-		this.addButton(new Button(this.guiLeft + 6, this.guiTop + 43, 45, 20, new StringTextComponent("Home"), e -> {
+		this.addButton(new Button(this.guiLeft + 7, this.guiTop + 25, 45, 20, new StringTextComponent("Home"), e -> {
 			if (true) {
 				ExplodationMod.PACKET_HANDLER.sendToServer(new EbayFoodGui.ButtonPressedMessage(1, x, y, z));
 				EbayFoodGui.handleButtonAction(entity, 1, x, y, z);
 			}
 		}));
-		this.addButton(new Button(this.guiLeft + 6, this.guiTop + 88, 60, 20, new StringTextComponent("Clothes"), e -> {
+		this.addButton(new Button(this.guiLeft + 187, this.guiTop + 115, 30, 20, new StringTextComponent("Buy"), e -> {
 			if (true) {
 				ExplodationMod.PACKET_HANDLER.sendToServer(new EbayFoodGui.ButtonPressedMessage(2, x, y, z));
 				EbayFoodGui.handleButtonAction(entity, 2, x, y, z);
 			}
 		}));
-		this.addButton(new Button(this.guiLeft + 114, this.guiTop + 88, 45, 20, new StringTextComponent("Food"), e -> {
+		this.addButton(new Button(this.guiLeft + 133, this.guiTop + 115, 30, 20, new StringTextComponent("buy"), e -> {
 			if (true) {
 				ExplodationMod.PACKET_HANDLER.sendToServer(new EbayFoodGui.ButtonPressedMessage(3, x, y, z));
 				EbayFoodGui.handleButtonAction(entity, 3, x, y, z);
 			}
 		}));
-		this.addButton(new Button(this.guiLeft + 6, this.guiTop + 115, 50, 20, new StringTextComponent("Music"), e -> {
+		this.addButton(new Button(this.guiLeft + 25, this.guiTop + 115, 30, 20, new StringTextComponent("Buy"), e -> {
 			if (true) {
 				ExplodationMod.PACKET_HANDLER.sendToServer(new EbayFoodGui.ButtonPressedMessage(4, x, y, z));
 				EbayFoodGui.handleButtonAction(entity, 4, x, y, z);
+			}
+		}));
+		this.addButton(new Button(this.guiLeft + 79, this.guiTop + 115, 30, 20, new StringTextComponent("Buy"), e -> {
+			if (true) {
+				ExplodationMod.PACKET_HANDLER.sendToServer(new EbayFoodGui.ButtonPressedMessage(5, x, y, z));
+				EbayFoodGui.handleButtonAction(entity, 5, x, y, z);
 			}
 		}));
 	}

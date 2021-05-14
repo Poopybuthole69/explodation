@@ -22,8 +22,11 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.gui.ScreenManager;
 
-import net.mcreator.explodation.procedures.OpenInternetProcedure;
 import net.mcreator.explodation.procedures.GoToEbayProcedure;
+import net.mcreator.explodation.procedures.BuyGumballlProcedure;
+import net.mcreator.explodation.procedures.BuyGodappleProcedure;
+import net.mcreator.explodation.procedures.BuyCookieProcedure;
+import net.mcreator.explodation.procedures.BuyCarrotProcedure;
 import net.mcreator.explodation.ExplodationModElements;
 
 import java.util.function.Supplier;
@@ -184,7 +187,7 @@ public class EbayFoodGui extends ExplodationModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				OpenInternetProcedure.executeProcedure($_dependencies);
+				GoToEbayProcedure.executeProcedure($_dependencies);
 			}
 		}
 		if (buttonID == 1) {
@@ -196,6 +199,50 @@ public class EbayFoodGui extends ExplodationModElements.ModElement {
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
 				GoToEbayProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 2) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				BuyGodappleProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 3) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				BuyGumballlProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 4) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				BuyCarrotProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 5) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				BuyCookieProcedure.executeProcedure($_dependencies);
 			}
 		}
 	}

@@ -92,6 +92,9 @@
         "type": "button",
         "data": {
           "text": "Food",
+          "onClick": {
+            "name": "GoToEbayFood"
+          },
           "width": 45,
           "height": 20,
           "name": "Food",

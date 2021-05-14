@@ -27,7 +27,7 @@ public class LoadGuiGuiWindow extends ContainerScreen<LoadGuiGui.GuiContainerMod
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.xSize = 176;
+		this.xSize = 250;
 		this.ySize = 166;
 	}
 	private static final ResourceLocation texture = new ResourceLocation("explodation:textures/load_gui.png");

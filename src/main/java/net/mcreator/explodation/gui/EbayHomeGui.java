@@ -24,6 +24,7 @@ import net.minecraft.client.gui.ScreenManager;
 
 import net.mcreator.explodation.procedures.OpenInternetProcedure;
 import net.mcreator.explodation.procedures.GoToEbayProcedure;
+import net.mcreator.explodation.procedures.GoToEbayFoodProcedure;
 import net.mcreator.explodation.ExplodationModElements;
 
 import java.util.function.Supplier;
@@ -196,6 +197,17 @@ public class EbayHomeGui extends ExplodationModElements.ModElement {
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
 				GoToEbayProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 3) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				GoToEbayFoodProcedure.executeProcedure($_dependencies);
 			}
 		}
 	}

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "explodation:items/debitcard"
+    "layer0": "explodation:items/gumballs"
   }
 }
