@@ -822,6 +822,16 @@
       "ids": {},
       "registry_name": "load_gui",
       "path": "~/Internet"
+    },
+    {
+      "name": "EbayFood",
+      "type": "gui",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ebay_food",
+      "path": "~/Internet/Ebay"
     }
   ],
   "variable_elements": [
