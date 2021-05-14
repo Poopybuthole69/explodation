@@ -41,6 +41,9 @@
         "type": "button",
         "data": {
           "text": "Ebay",
+          "onClick": {
+            "name": "GoToEbay"
+          },
           "width": 45,
           "height": 20,
           "name": "Ebay",

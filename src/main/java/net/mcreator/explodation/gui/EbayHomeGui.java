@@ -22,8 +22,8 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.gui.ScreenManager;
 
+import net.mcreator.explodation.procedures.OpenInternetProcedure;
 import net.mcreator.explodation.procedures.GoToEbayProcedure;
-import net.mcreator.explodation.procedures.CheckIfHasBankAccountProcedure;
 import net.mcreator.explodation.ExplodationModElements;
 
 import java.util.function.Supplier;
@@ -31,11 +31,11 @@ import java.util.Map;
 import java.util.HashMap;
 
 @ExplodationModElements.ModElement.Tag
-public class InternetGui extends ExplodationModElements.ModElement {
+public class EbayHomeGui extends ExplodationModElements.ModElement {
 	public static HashMap guistate = new HashMap();
 	private static ContainerType<GuiContainerMod> containerType = null;
-	public InternetGui(ExplodationModElements instance) {
-		super(instance, 10);
+	public EbayHomeGui(ExplodationModElements instance) {
+		super(instance, 35);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
 				ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,
@@ -46,12 +46,12 @@ public class InternetGui extends ExplodationModElements.ModElement {
 	private static class ContainerRegisterHandler {
 		@SubscribeEvent
 		public void registerContainer(RegistryEvent.Register<ContainerType<?>> event) {
-			event.getRegistry().register(containerType.setRegistryName("internet"));
+			event.getRegistry().register(containerType.setRegistryName("ebay_home"));
 		}
 	}
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
-		DeferredWorkQueue.runLater(() -> ScreenManager.registerFactory(containerType, InternetGuiWindow::new));
+		DeferredWorkQueue.runLater(() -> ScreenManager.registerFactory(containerType, EbayHomeGuiWindow::new));
 	}
 	public static class GuiContainerModFactory implements IContainerFactory {
 		public GuiContainerMod create(int id, PlayerInventory inv, PacketBuffer extraData) {
@@ -184,7 +184,7 @@ public class InternetGui extends ExplodationModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				CheckIfHasBankAccountProcedure.executeProcedure($_dependencies);
+				OpenInternetProcedure.executeProcedure($_dependencies);
 			}
 		}
 		if (buttonID == 1) {

@@ -68,6 +68,7 @@ public class ExplodationModVariables {
 		public INBT writeNBT(Capability<PlayerVariables> capability, PlayerVariables instance, Direction side) {
 			CompoundNBT nbt = new CompoundNBT();
 			nbt.putString("Pincode", instance.Pincode);
+			nbt.putDouble("BankMoney", instance.BankMoney);
 			return nbt;
 		}
 
@@ -75,11 +76,13 @@ public class ExplodationModVariables {
 		public void readNBT(Capability<PlayerVariables> capability, PlayerVariables instance, Direction side, INBT inbt) {
 			CompoundNBT nbt = (CompoundNBT) inbt;
 			instance.Pincode = nbt.getString("Pincode");
+			instance.BankMoney = nbt.getDouble("BankMoney");
 		}
 	}
 
 	public static class PlayerVariables {
 		public String Pincode = "NoAccount";
+		public double BankMoney = 0.0;
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
 				ExplodationMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity),
@@ -113,6 +116,7 @@ public class ExplodationModVariables {
 				.orElse(new PlayerVariables()));
 		PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 		clone.Pincode = original.Pincode;
+		clone.BankMoney = original.BankMoney;
 		if (!event.isWasDeath()) {
 		}
 	}
@@ -138,6 +142,7 @@ public class ExplodationModVariables {
 					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new PlayerVariables()));
 					variables.Pincode = message.data.Pincode;
+					variables.BankMoney = message.data.BankMoney;
 				}
 			});
 			context.setPacketHandled(true);

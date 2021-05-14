@@ -21,11 +21,11 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
 @OnlyIn(Dist.CLIENT)
-public class BankHomeGuiWindow extends ContainerScreen<BankHomeGui.GuiContainerMod> {
+public class EbayHomeGuiWindow extends ContainerScreen<EbayHomeGui.GuiContainerMod> {
 	private World world;
 	private int x, y, z;
 	private PlayerEntity entity;
-	public BankHomeGuiWindow(BankHomeGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
+	public EbayHomeGuiWindow(EbayHomeGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
 		this.x = container.x;
@@ -35,7 +35,7 @@ public class BankHomeGuiWindow extends ContainerScreen<BankHomeGui.GuiContainerM
 		this.xSize = 176;
 		this.ySize = 166;
 	}
-	private static final ResourceLocation texture = new ResourceLocation("explodation:textures/bank_home.png");
+	private static final ResourceLocation texture = new ResourceLocation("explodation:textures/ebay_home.png");
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);
@@ -71,9 +71,10 @@ public class BankHomeGuiWindow extends ContainerScreen<BankHomeGui.GuiContainerM
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
-		this.font.drawString(ms, "Bank - Home", 6, 7, -12829636);
-		this.font.drawString(ms, "Current Balance: " + (int) ((entity.getCapability(ExplodationModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ExplodationModVariables.PlayerVariables())).BankMoney) + "$", 6, 35, -12829636);
+		this.font.drawString(ms, "Ebay - Home", 6, 7, -12829636);
+		this.font.drawString(ms, "" + (int) ((entity.getCapability(ExplodationModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new ExplodationModVariables.PlayerVariables())).BankMoney) + "$", 114, 43, -12829636);
+		this.font.drawString(ms, "_________________________", 15, 25, -12829636);
 	}
 
 	@Override
@@ -88,26 +89,38 @@ public class BankHomeGuiWindow extends ContainerScreen<BankHomeGui.GuiContainerM
 		minecraft.keyboardListener.enableRepeatEvents(true);
 		this.addButton(new Button(this.guiLeft + 123, this.guiTop + 7, 45, 20, new StringTextComponent("Back"), e -> {
 			if (true) {
-				ExplodationMod.PACKET_HANDLER.sendToServer(new BankHomeGui.ButtonPressedMessage(0, x, y, z));
-				BankHomeGui.handleButtonAction(entity, 0, x, y, z);
+				ExplodationMod.PACKET_HANDLER.sendToServer(new EbayHomeGui.ButtonPressedMessage(0, x, y, z));
+				EbayHomeGui.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
-		this.addButton(new Button(this.guiLeft + 6, this.guiTop + 133, 95, 20, new StringTextComponent("Change pincode"), e -> {
+		this.addButton(new Button(this.guiLeft + 6, this.guiTop + 43, 45, 20, new StringTextComponent("Home"), e -> {
 			if (true) {
-				ExplodationMod.PACKET_HANDLER.sendToServer(new BankHomeGui.ButtonPressedMessage(1, x, y, z));
-				BankHomeGui.handleButtonAction(entity, 1, x, y, z);
+				ExplodationMod.PACKET_HANDLER.sendToServer(new EbayHomeGui.ButtonPressedMessage(1, x, y, z));
+				EbayHomeGui.handleButtonAction(entity, 1, x, y, z);
 			}
 		}));
-		this.addButton(new Button(this.guiLeft + 69, this.guiTop + 7, 45, 20, new StringTextComponent("Refresh"), e -> {
+		this.addButton(new Button(this.guiLeft + 60, this.guiTop + 43, 50, 20, new StringTextComponent("Admin"), e -> {
 			if (true) {
-				ExplodationMod.PACKET_HANDLER.sendToServer(new BankHomeGui.ButtonPressedMessage(2, x, y, z));
-				BankHomeGui.handleButtonAction(entity, 2, x, y, z);
+				ExplodationMod.PACKET_HANDLER.sendToServer(new EbayHomeGui.ButtonPressedMessage(2, x, y, z));
+				EbayHomeGui.handleButtonAction(entity, 2, x, y, z);
 			}
 		}));
-		this.addButton(new Button(this.guiLeft + 6, this.guiTop + 70, 85, 20, new StringTextComponent("Transactions"), e -> {
+		this.addButton(new Button(this.guiLeft + 6, this.guiTop + 88, 60, 20, new StringTextComponent("Clothes"), e -> {
 			if (true) {
-				ExplodationMod.PACKET_HANDLER.sendToServer(new BankHomeGui.ButtonPressedMessage(3, x, y, z));
-				BankHomeGui.handleButtonAction(entity, 3, x, y, z);
+				ExplodationMod.PACKET_HANDLER.sendToServer(new EbayHomeGui.ButtonPressedMessage(3, x, y, z));
+				EbayHomeGui.handleButtonAction(entity, 3, x, y, z);
+			}
+		}));
+		this.addButton(new Button(this.guiLeft + 114, this.guiTop + 88, 45, 20, new StringTextComponent("Food"), e -> {
+			if (true) {
+				ExplodationMod.PACKET_HANDLER.sendToServer(new EbayHomeGui.ButtonPressedMessage(4, x, y, z));
+				EbayHomeGui.handleButtonAction(entity, 4, x, y, z);
+			}
+		}));
+		this.addButton(new Button(this.guiLeft + 6, this.guiTop + 115, 50, 20, new StringTextComponent("Music"), e -> {
+			if (true) {
+				ExplodationMod.PACKET_HANDLER.sendToServer(new EbayHomeGui.ButtonPressedMessage(5, x, y, z));
+				EbayHomeGui.handleButtonAction(entity, 5, x, y, z);
 			}
 		}));
 	}

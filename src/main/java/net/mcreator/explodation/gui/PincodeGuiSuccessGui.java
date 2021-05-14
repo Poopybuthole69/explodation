@@ -22,6 +22,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.gui.ScreenManager;
 
+import net.mcreator.explodation.procedures.GoToBankHomeProcedure;
 import net.mcreator.explodation.procedures.CheckIfHasBankAccountProcedure;
 import net.mcreator.explodation.ExplodationModElements;
 
@@ -183,7 +184,7 @@ public class PincodeGuiSuccessGui extends ExplodationModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				CheckIfHasBankAccountProcedure.executeProcedure($_dependencies);
+				GoToBankHomeProcedure.executeProcedure($_dependencies);
 			}
 		}
 		if (buttonID == 1) {

@@ -112,6 +112,14 @@ public class AttemptBankSignupProcedure extends ExplodationModElements.ModElemen
 				});
 			}
 			{
+				double _setval = (double) (((entity.getCapability(ExplodationModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new ExplodationModVariables.PlayerVariables())).BankMoney) + 10);
+				entity.getCapability(ExplodationModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.BankMoney = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			{
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
 					BlockPos _bpos = new BlockPos((int) x, (int) y, (int) z);

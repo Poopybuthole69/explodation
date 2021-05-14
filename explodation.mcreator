@@ -734,6 +734,94 @@
       "ids": {},
       "registry_name": "pincode_gui_fail",
       "path": "~/Internet/Bank/Procedures/command"
+    },
+    {
+      "name": "GoToBankHome",
+      "type": "procedure",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "go_to_bank_home",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Internet/Bank/Procedures"
+    },
+    {
+      "name": "EbayHome",
+      "type": "gui",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ebay_home",
+      "path": "~/Internet/Ebay"
+    },
+    {
+      "name": "GoToEbay",
+      "type": "procedure",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "go_to_ebay",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Internet/Ebay/Procedures"
+    },
+    {
+      "name": "LoadGui",
+      "type": "gui",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "load_gui",
+      "path": "~/Internet"
     }
   ],
   "variable_elements": [
@@ -742,6 +830,12 @@
       "type": "string",
       "scope": "player_persistent",
       "value": "NoAccount"
+    },
+    {
+      "name": "BankMoney",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
     }
   ],
   "sound_elements": [],
@@ -824,6 +918,15 @@
                     "children": []
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "name": "Ebay",
+            "children": [
+              {
+                "name": "Procedures",
+                "children": []
               }
             ]
           }

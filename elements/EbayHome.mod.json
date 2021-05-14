@@ -13,12 +13,12 @@
       {
         "type": "label",
         "data": {
-          "text": "Bank - Home",
+          "text": "Ebay - Home",
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Bank - Home",
+          "name": "Ebay - Home",
           "x": 132,
           "y": 44
         }
@@ -26,14 +26,27 @@
       {
         "type": "label",
         "data": {
-          "text": "Current Balance: <VAR:integer:BankMoney>$",
+          "text": "<VAR:integer:BankMoney>$",
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Current Balance: <VAR:integer:BankMoney>$",
-          "x": 132,
-          "y": 72
+          "name": "<VAR:integer:BankMoney>$",
+          "x": 240,
+          "y": 80
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "_________________________",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "_________________________",
+          "x": 141,
+          "y": 62
         }
       },
       {
@@ -53,40 +66,59 @@
       {
         "type": "button",
         "data": {
-          "text": "Change pincode",
+          "text": "Home",
           "onClick": {
-            "name": "ChangePincodeCommandExecuted"
-          },
-          "width": 95,
-          "height": 20,
-          "name": "Change pincode",
-          "x": 132,
-          "y": 170
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Refresh",
-          "onClick": {
-            "name": "GoToBankHome"
+            "name": "GoToEbay"
           },
           "width": 45,
           "height": 20,
-          "name": "Refresh",
-          "x": 195,
-          "y": 44
+          "name": "Home",
+          "x": 132,
+          "y": 80
         }
       },
       {
         "type": "button",
         "data": {
-          "text": "Transactions",
-          "width": 85,
+          "text": "Admin",
+          "width": 50,
           "height": 20,
-          "name": "Transactions",
+          "name": "Admin",
+          "x": 186,
+          "y": 80
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Clothes",
+          "width": 60,
+          "height": 20,
+          "name": "Clothes",
           "x": 132,
-          "y": 107
+          "y": 125
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Food",
+          "width": 45,
+          "height": 20,
+          "name": "Food",
+          "x": 240,
+          "y": 125
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Music",
+          "width": 50,
+          "height": 20,
+          "name": "Music",
+          "x": 132,
+          "y": 152
         }
       }
     ]
