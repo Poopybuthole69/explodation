@@ -41,7 +41,7 @@
         "data": {
           "text": "Go to Bank",
           "onClick": {
-            "name": "GoToBank"
+            "name": "CheckIfHasBankAccount"
           },
           "width": 55,
           "height": 20,
@@ -68,7 +68,7 @@
         "data": {
           "text": "Back",
           "onClick": {
-            "name": "GoToBank"
+            "name": "CheckIfHasBankAccount"
           },
           "width": 45,
           "height": 20,

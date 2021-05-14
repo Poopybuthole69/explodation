@@ -25,7 +25,7 @@ public class PincodeGuiGuiWindow extends ContainerScreen<PincodeGuiGui.GuiContai
 	private World world;
 	private int x, y, z;
 	private PlayerEntity entity;
-	TextFieldWidget Pincode;
+	TextFieldWidget CommandPincode;
 	public PincodeGuiGuiWindow(PincodeGuiGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
@@ -42,7 +42,7 @@ public class PincodeGuiGuiWindow extends ContainerScreen<PincodeGuiGui.GuiContai
 		this.renderBackground(ms);
 		super.render(ms, mouseX, mouseY, partialTicks);
 		this.renderHoveredTooltip(ms, mouseX, mouseY);
-		Pincode.render(ms, mouseX, mouseY, partialTicks);
+		CommandPincode.render(ms, mouseX, mouseY, partialTicks);
 	}
 
 	@Override
@@ -63,15 +63,15 @@ public class PincodeGuiGuiWindow extends ContainerScreen<PincodeGuiGui.GuiContai
 			this.minecraft.player.closeScreen();
 			return true;
 		}
-		if (Pincode.isFocused())
-			return Pincode.keyPressed(key, b, c);
+		if (CommandPincode.isFocused())
+			return CommandPincode.keyPressed(key, b, c);
 		return super.keyPressed(key, b, c);
 	}
 
 	@Override
 	public void tick() {
 		super.tick();
-		Pincode.tick();
+		CommandPincode.tick();
 	}
 
 	@Override
@@ -90,15 +90,21 @@ public class PincodeGuiGuiWindow extends ContainerScreen<PincodeGuiGui.GuiContai
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		Pincode = new TextFieldWidget(this.font, this.guiLeft + 33, this.guiTop + 61, 120, 20, new StringTextComponent("Commandpincode")) {
+		this.addButton(new Button(this.guiLeft + 60, this.guiTop + 88, 55, 20, new StringTextComponent("change"), e -> {
+			if (true) {
+				ExplodationMod.PACKET_HANDLER.sendToServer(new PincodeGuiGui.ButtonPressedMessage(0, x, y, z));
+				PincodeGuiGui.handleButtonAction(entity, 0, x, y, z);
+			}
+		}));
+		CommandPincode = new TextFieldWidget(this.font, this.guiLeft + 33, this.guiTop + 61, 120, 20, new StringTextComponent("Pincode")) {
 			{
-				setSuggestion("Commandpincode");
+				setSuggestion("Pincode");
 			}
 			@Override
 			public void writeText(String text) {
 				super.writeText(text);
 				if (getText().isEmpty())
-					setSuggestion("Commandpincode");
+					setSuggestion("Pincode");
 				else
 					setSuggestion(null);
 			}
@@ -107,19 +113,13 @@ public class PincodeGuiGuiWindow extends ContainerScreen<PincodeGuiGui.GuiContai
 			public void setCursorPosition(int pos) {
 				super.setCursorPosition(pos);
 				if (getText().isEmpty())
-					setSuggestion("Commandpincode");
+					setSuggestion("Pincode");
 				else
 					setSuggestion(null);
 			}
 		};
-		PincodeGuiGui.guistate.put("text:Pincode", Pincode);
-		Pincode.setMaxStringLength(32767);
-		this.children.add(this.Pincode);
-		this.addButton(new Button(this.guiLeft + 60, this.guiTop + 88, 55, 20, new StringTextComponent("change"), e -> {
-			if (true) {
-				ExplodationMod.PACKET_HANDLER.sendToServer(new PincodeGuiGui.ButtonPressedMessage(0, x, y, z));
-				PincodeGuiGui.handleButtonAction(entity, 0, x, y, z);
-			}
-		}));
+		PincodeGuiGui.guistate.put("text:CommandPincode", CommandPincode);
+		CommandPincode.setMaxStringLength(32767);
+		this.children.add(this.CommandPincode);
 	}
 }

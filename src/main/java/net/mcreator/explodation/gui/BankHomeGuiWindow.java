@@ -134,5 +134,11 @@ public class BankHomeGuiWindow extends ContainerScreen<BankHomeGui.GuiContainerM
 				BankHomeGui.handleButtonAction(entity, 2, x, y, z);
 			}
 		}));
+		this.addButton(new Button(this.guiLeft + 6, this.guiTop + 133, 95, 20, new StringTextComponent("Change pincode"), e -> {
+			if (true) {
+				ExplodationMod.PACKET_HANDLER.sendToServer(new BankHomeGui.ButtonPressedMessage(3, x, y, z));
+				BankHomeGui.handleButtonAction(entity, 3, x, y, z);
+			}
+		}));
 	}
 }

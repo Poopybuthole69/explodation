@@ -24,17 +24,6 @@
         }
       },
       {
-        "type": "textfield",
-        "data": {
-          "placeholder": "Commandpincode",
-          "width": 120,
-          "height": 20,
-          "name": "Pincode",
-          "x": 159,
-          "y": 98
-        }
-      },
-      {
         "type": "label",
         "data": {
           "text": "Type to change your pincode",
@@ -59,6 +48,17 @@
           "name": "change",
           "x": 186,
           "y": 125
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Pincode",
+          "width": 120,
+          "height": 20,
+          "name": "CommandPincode",
+          "x": 159,
+          "y": 98
         }
       }
     ]

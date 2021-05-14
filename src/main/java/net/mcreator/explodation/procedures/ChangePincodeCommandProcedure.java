@@ -71,7 +71,7 @@ public class ChangePincodeCommandProcedure extends ExplodationModElements.ModEle
 		IWorld world = (IWorld) dependencies.get("world");
 		if ((((new Object() {
 			public String getText() {
-				TextFieldWidget textField = (TextFieldWidget) guistate.get("text:Commandpincode");
+				TextFieldWidget textField = (TextFieldWidget) guistate.get("text:CommandPincode");
 				if (textField != null) {
 					return textField.getText();
 				}
@@ -99,7 +99,7 @@ public class ChangePincodeCommandProcedure extends ExplodationModElements.ModEle
 			{
 				String _setval = (String) (new Object() {
 					public String getText() {
-						TextFieldWidget textField = (TextFieldWidget) guistate.get("text:Commandpincode");
+						TextFieldWidget textField = (TextFieldWidget) guistate.get("text:CommandPincode");
 						if (textField != null) {
 							return textField.getText();
 						}

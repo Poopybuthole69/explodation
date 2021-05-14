@@ -98,6 +98,20 @@
           "x": 249,
           "y": 44
         }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Change pincode",
+          "onClick": {
+            "name": "ChangePincodeCommandExecuted"
+          },
+          "width": 95,
+          "height": 20,
+          "name": "Change pincode",
+          "x": 132,
+          "y": 170
+        }
       }
     ]
   }
