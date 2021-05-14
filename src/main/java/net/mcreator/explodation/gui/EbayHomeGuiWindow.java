@@ -73,7 +73,7 @@ public class EbayHomeGuiWindow extends ContainerScreen<EbayHomeGui.GuiContainerM
 	protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
 		this.font.drawString(ms, "Ebay - Home", 6, 7, -12829636);
 		this.font.drawString(ms, "" + (int) ((entity.getCapability(ExplodationModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ExplodationModVariables.PlayerVariables())).BankMoney) + "$", 114, 43, -12829636);
+				.orElse(new ExplodationModVariables.PlayerVariables())).BankMoney) + "$", 132, 43, -12829636);
 		this.font.drawString(ms, "_________________________", 15, 25, -12829636);
 	}
 
